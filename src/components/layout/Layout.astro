@@ -9,9 +9,9 @@ export interface Props {
 
 const { 
 	title, 
-	description = "Guppy Vet - Veterinaria especializada en el cuidado integral de tus mascotas. Servicios veterinarios de calidad con amor y profesionalismo.",
-	keywords = "veterinaria, mascotas, perros, gatos, cuidado animal, consultas veterinarias, vacunas, cirugía veterinaria, emergencias veterinarias, salud animal, clínica veterinaria",
-	image = "/images/guppy-vet-og.jpg",
+	description = "Guppy Vet - Veterinaria en Macul, cerca del Metro Macul. Especializada en el cuidado integral de tus mascotas. Servicios veterinarios de calidad con amor y profesionalismo.",
+	keywords = "veterinaria Macul, veterinaria cerca Metro Macul, mascotas Macul, perros gatos Santiago, cuidado animal Macul, consultas veterinarias Santiago, vacunas Macul, cirugía veterinaria Macul, emergencias veterinarias Santiago, salud animal, clínica veterinaria Macul",
+	image = "/logo.png",
 	url = Astro.url.href
 } = Astro.props;
 ---
@@ -54,8 +54,10 @@ const {
 		<meta property="twitter:image" content={new URL(image, Astro.url)} />
 		
 		<!-- Additional SEO Meta Tags -->
-		<meta name="geo.region" content="ES" />
-		<meta name="geo.placename" content="España" />
+		<meta name="geo.region" content="CL-RM" />
+		<meta name="geo.placename" content="Macul, Santiago, Chile" />
+		<meta name="geo.position" content="-33.4981,-70.6063" />
+		<meta name="ICBM" content="-33.4981,-70.6063" />
 		<meta name="language" content="Spanish" />
 		<meta name="distribution" content="global" />
 		<meta name="rating" content="general" />
@@ -73,12 +75,20 @@ const {
 			"@context": "https://schema.org",
 			"@type": "VeterinaryCare",
 			"name": "Guppy Vet",
-			"description": "Veterinaria especializada en el cuidado integral de mascotas",
+			"description": "Veterinaria en Macul, cerca del Metro Macul, especializada en el cuidado integral de mascotas",
 			"url": "https://guppyvet.com",
 			"logo": "https://guppyvet.com/logo.png",
 			"address": {
 				"@type": "PostalAddress",
-				"addressCountry": "ES"
+				"addressLocality": "Macul",
+				"addressRegion": "Región Metropolitana",
+				"addressCountry": "CL",
+				"postalCode": "7810000"
+			},
+			"geo": {
+				"@type": "GeoCoordinates",
+				"latitude": -33.4981,
+				"longitude": -70.6063
 			},
 			"contactPoint": {
 				"@type": "ContactPoint",
@@ -88,7 +98,9 @@ const {
 			"sameAs": [
 				"https://facebook.com/guppyvet",
 				"https://instagram.com/guppyvet"
-			]
+			],
+			"hasMap": "https://goo.gl/maps/example",
+			"keywords": "veterinaria Macul, Metro Macul, veterinaria Santiago"
 		}
 		</script>
 		
