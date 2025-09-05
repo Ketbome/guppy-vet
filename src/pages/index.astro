@@ -2151,10 +2151,11 @@
 				const navLinks = document.querySelectorAll('.nav__link');
 				navLinks.forEach(link => {
 					link.addEventListener('click', function(e) {
-						if (this.getAttribute('href').startsWith('#')) {
+						const target = e.currentTarget as HTMLAnchorElement;
+						if (target.getAttribute('href')?.startsWith('#')) {
 							e.preventDefault();
-							const targetId = this.getAttribute('href');
-							const targetSection = document.querySelector(targetId);
+							const targetId = target.getAttribute('href');
+							const targetSection = document.querySelector(targetId!);
 							if (targetSection) {
 								targetSection.scrollIntoView({
 									behavior: 'smooth'
@@ -2167,10 +2168,12 @@
 				// Add scroll effect to header
 				window.addEventListener('scroll', function() {
 					const header = document.querySelector('.header');
-					if (window.scrollY > 100) {
-						header.style.background = 'rgba(255, 255, 255, 0.98)';
-					} else {
-						header.style.background = 'rgba(255, 255, 255, 0.95)';
+					if (header instanceof HTMLElement) {
+						if (window.scrollY > 100) {
+							header.style.background = 'rgba(255, 255, 255, 0.98)';
+						} else {
+							header.style.background = 'rgba(255, 255, 255, 0.95)';
+						}
 					}
 				});
 
@@ -2203,7 +2206,7 @@
 					// Update transform
 					function updateCarousel() {
 						const translateX = -(currentIndex + visibleCards) * cardWidth;
-						carouselTrack.style.transform = `translateX(${translateX}px)`;
+						(carouselTrack as HTMLElement).style.transform = `translateX(${translateX}px)`;
 					}
 
 					// Next button
@@ -2229,7 +2232,7 @@
 					}
 
 					// Auto-scroll
-					let autoScrollInterval;
+					let autoScrollInterval: string | number | NodeJS.Timeout | undefined;
 					
 					function startAutoScroll() {
 						autoScrollInterval = setInterval(function() {
@@ -2280,8 +2283,8 @@
 					let isScrolling = false;
 
 					carouselTrack.addEventListener('touchstart', function(e) {
-						startX = e.touches[0].clientX;
-						startY = e.touches[0].clientY;
+						startX = (e as TouchEvent).touches[0].clientX;
+						startY = (e as TouchEvent).touches[0].clientY;
 						isScrolling = false;
 						stopAutoScroll();
 					});
@@ -2289,8 +2292,8 @@
 					carouselTrack.addEventListener('touchmove', function(e) {
 						if (!startX || !startY) return;
 
-						const diffX = startX - e.touches[0].clientX;
-						const diffY = startY - e.touches[0].clientY;
+						const diffX = startX - (e as TouchEvent).touches[0].clientX;
+						const diffY = startY - (e as TouchEvent).touches[0].clientY;
 
 						if (Math.abs(diffX) > Math.abs(diffY)) {
 							isScrolling = true;
@@ -2304,7 +2307,7 @@
 							return;
 						}
 
-						const diffX = startX - e.changedTouches[0].clientX;
+						const diffX = startX - (e as TouchEvent).changedTouches[0].clientX;
 
 						if (Math.abs(diffX) > 50) {
 							if (diffX > 0) {
