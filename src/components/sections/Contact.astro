@@ -83,37 +83,92 @@
 				</div>
 			</div>
 
-			<!-- Information Grid -->
-			<div class="contact__grid">
-				<div class="contact__info-card">
-					<div class="info__icon">
-						<i class="fas fa-map-marker-alt"></i>
-					</div>
-					<div class="info__content">
-						<h4>Nuestra Clínica</h4>
-						<p>Av. Macul 6035, Local 7<br>Macul, Santiago</p>
-						<a href="https://maps.google.com/?q=Clinica+Veterinaria+Guppyvet" 
-						   target="_blank" class="info__link">
-							<i class="fas fa-external-link-alt"></i>
-							Ver en Google Maps
-						</a>
+			<!-- Map and Info Section -->
+			<div class="contact__location">
+				<!-- Map Section (Left) -->
+				<div class="contact__map">
+					<div class="map__container">
+						<iframe 
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.7859264447147!2d-70.59603042477917!3d-33.50651127328003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d191aab60e43%3A0xdf0ae25500ab60af!2sClinica%20Veterinaria%20Guppyvet!5e0!3m2!1ses-419!2scl!4v1694186234567!5m2!1ses-419!2scl" 
+							width="100%" 
+							height="100%" 
+							style="border:0;" 
+							allowfullscreen="" 
+							loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade"
+							class="map__iframe">
+						</iframe>
+						<div class="map__overlay">
+							<a href="https://www.google.com/maps/place/Clinica+Veterinaria+Guppyvet/@-33.5065112,-70.5960304,17z/data=!3m1!4b1!4m6!3m5!1s0x9662d191aab60e43:0xdf0ae25500ab60af!8m2!3d-33.5065113!4d-70.5911595!16s%2Fg%2F11tw_x7prp?entry=ttu&g_ep=EgoyMDI1MDkwMi4wIKXMDSoASAFQAw%3D%3D" 
+							   target="_blank" class="map__link">
+								<i class="fas fa-external-link-alt"></i>
+								Ver en Google Maps
+							</a>
+						</div>
 					</div>
 				</div>
 
-				<div class="contact__info-card">
-					<div class="info__icon">
-						<i class="fas fa-clock"></i>
-					</div>
-					<div class="info__content">
-						<h4>Horarios de Atención</h4>
-						<div class="schedule">
-							<div class="schedule__item">
-								<span>Lunes a Viernes:</span>
-								<strong>11:30 - 20:00 hrs</strong>
+				<!-- Clinic Info Section (Right) -->
+				<div class="contact__info-section">
+					<div class="contact__info-card contact__info-card--clinic">
+						<div class="card__header">
+							<div class="info__icon">
+								<i class="fas fa-map-marker-alt"></i>
 							</div>
-							<div class="schedule__item">
-								<span>Sábados:</span>
-								<strong>11:00 - 19:00 hrs</strong>
+							<div class="card__title">
+								<h4>Nuestra Clínica</h4>
+								<p class="card__subtitle">Tu mascota en las mejores manos</p>
+							</div>
+						</div>
+						<div class="info__content">
+							<div class="address__info">
+								<div class="address__main">
+									<i class="fas fa-building"></i>
+									<div>
+										<strong>Av. Macul 6035, Local 7</strong>
+										<span>Macul, Santiago</span>
+									</div>
+								</div>
+							</div>
+							<div class="clinic__features">
+								<div class="feature">
+									<i class="fas fa-parking"></i>
+									<span>Estacionamiento</span>
+								</div>
+								<div class="feature">
+									<i class="fas fa-wheelchair"></i>
+									<span>Acceso universal</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="contact__info-card contact__info-card--schedule">
+						<div class="card__header">
+							<div class="info__icon">
+								<i class="fas fa-clock"></i>
+							</div>
+							<div class="card__title">
+								<h4>Horarios de Atención</h4>
+								<p class="card__subtitle">Siempre disponibles para ti</p>
+							</div>
+						</div>
+						<div class="info__content">
+							<div class="schedule">
+								<div class="schedule__item">
+									<div class="schedule__day">
+										<i class="fas fa-calendar-day"></i>
+										<span>Lunes a Viernes</span>
+									</div>
+									<strong>11:30 - 20:00 hrs</strong>
+								</div>
+								<div class="schedule__item">
+									<div class="schedule__day">
+										<i class="fas fa-calendar-week"></i>
+										<span>Sábados</span>
+									</div>
+									<strong>11:00 - 19:00 hrs</strong>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -272,18 +327,354 @@
 		gap: 1.5rem;
 	}
 
+	/* Location Section */
+	.contact__location {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+		margin-top: 2rem;
+		align-items: stretch;
+	}
+
+	/* Map Section */
+	.contact__map {
+		position: relative;
+	}
+
+	.map__container {
+		position: relative;
+		border-radius: var(--border-radius);
+		overflow: hidden;
+		box-shadow: var(--shadow-medium);
+		height: 450px;
+		background: #f8fafc;
+	}
+
+	.map__image,
+	.map__iframe {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s ease;
+		border-radius: var(--border-radius);
+	}
+
+	.map__container:hover .map__image,
+	.map__container:hover .map__iframe {
+		transform: scale(1);
+	}
+
+	.map__overlay {
+		position: absolute;
+		bottom: 1rem;
+		left: 1rem;
+		right: 1rem;
+		display: flex;
+		justify-content: center;
+	}
+
+	.map__link {
+		background: rgba(37, 154, 140, 0.95);
+		color: white;
+		padding: 0.75rem 1.5rem;
+		border-radius: 25px;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 0.9rem;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		transition: all 0.3s ease;
+		backdrop-filter: blur(10px);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+	}
+
+	.map__link:hover {
+		background: rgba(37, 154, 140, 1);
+		transform: translateY(-2px);
+		box-shadow: 0 8px 25px rgba(37, 154, 140, 0.3);
+	}
+
+	/* Info Section */
+	.contact__info-section {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		height: 450px;
+	}
+
+	.contact__info-card--clinic,
+	.contact__info-card--schedule {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+	}
+
 	.contact__info-card {
 		background: white;
 		border-radius: var(--border-radius);
-		padding: 1.5rem;
+		padding: 0;
 		box-shadow: var(--shadow-light);
 		border: 1px solid var(--border-color);
 		transition: all 0.3s ease;
+		overflow: hidden;
+		position: relative;
 	}
 
 	.contact__info-card:hover {
 		transform: translateY(-4px);
 		box-shadow: var(--shadow-medium);
+	}
+
+	.contact__info-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 4px;
+		background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+	}
+
+	/* Card Header */
+	.card__header {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		padding: 1.5rem 1.5rem 0 1.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.card__title h4 {
+		color: var(--text-dark);
+		font-size: 1.1rem;
+		font-weight: 600;
+		margin: 0 0 0.25rem 0;
+	}
+
+	.card__subtitle {
+		color: var(--text-light);
+		font-size: 0.85rem;
+		margin: 0;
+		font-style: italic;
+	}
+
+	.info__icon {
+		width: 50px;
+		height: 50px;
+		background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+		border-radius: 12px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-size: 1.25rem;
+		flex-shrink: 0;
+	}
+
+	.info__content {
+		padding: 0 1.5rem 1.5rem 1.5rem;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	/* Address Info */
+	.address__info {
+		margin-bottom: 1.5rem;
+	}
+
+	.address__main {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.75rem;
+		padding: 1rem;
+		background: linear-gradient(135deg, rgba(37, 154, 140, 0.08) 0%, rgba(37, 154, 140, 0.03) 100%);
+		border-radius: 8px;
+		border: 1px solid rgba(37, 154, 140, 0.15);
+	}
+
+	.address__main i {
+		color: var(--primary-color);
+		margin-top: 0.125rem;
+		flex-shrink: 0;
+	}
+
+	.address__main div {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	.address__main strong {
+		color: var(--text-dark);
+		font-size: 0.95rem;
+		font-weight: 600;
+	}
+
+	.address__main span {
+		color: var(--text-light);
+		font-size: 0.85rem;
+	}
+
+	/* Clinic Features */
+	.clinic__features {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.75rem;
+	}
+
+	.feature {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.75rem;
+		background: rgba(37, 154, 140, 0.05);
+		border-radius: 6px;
+		border-left: 3px solid var(--primary-color);
+		transition: all 0.3s ease;
+	}
+
+	.feature:hover {
+		background: rgba(37, 154, 140, 0.1);
+		transform: translateX(2px);
+	}
+
+	.feature i {
+		color: var(--primary-color);
+		width: 14px;
+		flex-shrink: 0;
+		font-size: 0.9rem;
+	}
+
+	.feature span {
+		color: var(--text-light);
+		font-size: 0.8rem;
+		font-weight: 500;
+	}
+
+	/* Schedule Styles */
+	.schedule {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.schedule__item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0.75rem;
+		background: rgba(37, 154, 140, 0.05);
+		border-radius: 8px;
+		border-left: 3px solid var(--primary-color);
+		transition: all 0.3s ease;
+	}
+
+	.schedule__item:hover {
+		background: rgba(37, 154, 140, 0.1);
+		transform: translateX(2px);
+	}
+
+	.schedule__item--closed {
+		background: rgba(239, 68, 68, 0.05);
+		border-left-color: #ef4444;
+	}
+
+	.schedule__item--closed:hover {
+		background: rgba(239, 68, 68, 0.1);
+	}
+
+	.schedule__day {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.schedule__day i {
+		color: var(--primary-color);
+		width: 14px;
+		flex-shrink: 0;
+		font-size: 0.85rem;
+	}
+
+	.schedule__item--closed .schedule__day i {
+		color: #ef4444;
+	}
+
+	.schedule__day span {
+		color: var(--text-light);
+		font-size: 0.9rem;
+		font-weight: 500;
+	}
+
+	.schedule__item strong {
+		color: var(--text-dark);
+		font-weight: 600;
+		font-size: 0.9rem;
+	}
+
+	.schedule__item--closed strong {
+		color: #ef4444;
+	}
+
+	/* Emergency Info */
+	.emergency__info {
+		background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
+		border-radius: 8px;
+		padding: 1rem;
+		border: 1px solid rgba(59, 130, 246, 0.2);
+	}
+
+	.emergency__header {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.emergency__header i {
+		color: #3b82f6;
+		font-size: 0.9rem;
+	}
+
+	.emergency__header span {
+		color: #3b82f6;
+		font-weight: 600;
+		font-size: 0.9rem;
+	}
+
+	.emergency__info p {
+		color: var(--text-light);
+		font-size: 0.85rem;
+		line-height: 1.4;
+		margin: 0;
+	}
+
+	/* Schedule Note */
+	.schedule__note {
+		margin-top: 1rem;
+		padding: 0.75rem;
+		background: rgba(59, 130, 246, 0.1);
+		border-radius: 8px;
+		border-left: 3px solid #3b82f6;
+		display: flex;
+		align-items: flex-start;
+		gap: 0.5rem;
+	}
+
+	.schedule__note i {
+		color: #3b82f6;
+		margin-top: 0.125rem;
+		flex-shrink: 0;
+	}
+
+	.schedule__note span {
+		color: var(--text-light);
+		font-size: 0.85rem;
+		line-height: 1.4;
 	}
 
 	.info__icon {
@@ -425,9 +816,31 @@
 			padding: 1.5rem;
 		}
 
-		.contact__grid {
+		.contact__location {
 			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+
+		.map__container {
+			height: 300px;
+		}
+
+		.contact__info-section {
 			gap: 1.25rem;
+			height: auto;
+		}
+
+		.clinic__features {
+			grid-template-columns: 1fr;
+			gap: 0.5rem;
+		}
+
+		.feature {
+			padding: 0.6rem;
+		}
+
+		.feature span {
+			font-size: 0.8rem;
 		}
 
 		.contact__actions {
@@ -466,6 +879,27 @@
 			width: 40px;
 			height: 40px;
 			font-size: 1rem;
+		}
+
+		.map__container {
+			height: 250px;
+		}
+
+		.map__link {
+			padding: 0.6rem 1.2rem;
+			font-size: 0.8rem;
+		}
+
+		.clinic__features {
+			grid-template-columns: 1fr;
+		}
+
+		.card__header {
+			padding: 0.5rem 0.5rem 0 0.5rem;
+		}
+
+		.info__content {
+			padding: 0 0.5rem 0.5rem 0.5rem;
 		}
 	}
 </style>
