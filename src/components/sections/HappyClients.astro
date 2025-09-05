@@ -1,5 +1,80 @@
 ---
+import ClientCard from '../ui/ClientCard.astro';
 
+const clients = [
+	{
+		name: "Guppy",
+		image: "/cliente-mascota.jpeg",
+		status: "Saludable",
+		treatment: "Cirugía ortopédica",
+		treatmentIcon: "fa-stethoscope",
+		badgeText: "Recuperado",
+		badgeIcon: "fa-heart"
+	},
+	{
+		name: "Max y Nina",
+		image: "/cliente-mascota-2.jpeg",
+		status: "Saludable",
+		treatment: "Plan preventivo",
+		treatmentIcon: "fa-syringe",
+		badgeText: "Protegida",
+		badgeIcon: "fa-shield-alt"
+	},
+	{
+		name: "Rocky",
+		image: "/cliente-mascota-3.jpeg",
+		status: "Excelente",
+		treatment: "Dermatología",
+		treatmentIcon: "fa-pills",
+		badgeText: "Tratado",
+		badgeIcon: "fa-leaf"
+	},
+	{
+		name: "Bella",
+		image: "/cliente-mascota-4.jpeg",
+		status: "Activa",
+		treatment: "Medicina preventiva",
+		treatmentIcon: "fa-heartbeat",
+		badgeText: "Monitoreada",
+		badgeIcon: "fa-calendar-check"
+	},
+	{
+		name: "Mimi",
+		image: "/cliente-mascota-5.jpeg",
+		status: "Elegante",
+		treatment: "Estética felina",
+		treatmentIcon: "fa-spa",
+		badgeText: "Cuidada",
+		badgeIcon: "fa-cut"
+	},
+	{
+		name: "Thor",
+		image: "/cliente-mascota-6.jpeg",
+		status: "Fuerte",
+		treatment: "Rehabilitación",
+		treatmentIcon: "fa-dumbbell",
+		badgeText: "Recuperado",
+		badgeIcon: "fa-running"
+	},
+	{
+		name: "Coco",
+		image: "/cliente-mascota-7.jpeg",
+		status: "Próspero",
+		treatment: "Medicina exótica",
+		treatmentIcon: "fa-microscope",
+		badgeText: "Especial",
+		badgeIcon: "fa-star"
+	},
+	{
+		name: "Nala",
+		image: "/cliente-mascota-8.jpeg",
+		status: "Atlética",
+		treatment: "Nutrición clínica",
+		treatmentIcon: "fa-apple-alt",
+		badgeText: "En forma",
+		badgeIcon: "fa-weight"
+	}
+];
 ---
 
 <section class="happy-clients">
@@ -16,205 +91,9 @@
 			<div class="clients-carousel">
 				<div class="carousel-container">
 					<div class="carousel-track" id="carouselTrack">
-						<div class="client-card">
-							<div class="client-image">
-								<img src="/cliente-mascota.jpeg" alt="Max - Golden Retriever" class="client-img">
-								<div class="client-overlay">
-									<div class="success-badge">
-										<i class="fas fa-heart"></i>
-										<span>Recuperado</span>
-									</div>
-								</div>
-							</div>
-							<div class="client-info">
-								<div class="client-header">
-									<h4 class="client-name">Guppy</h4>
-									<div class="client-status">
-										<i class="fas fa-paw"></i>
-										<span>Saludable</span>
-									</div>
-								</div>
-								<div class="client-treatment">
-									<i class="fas fa-stethoscope"></i>
-									<span>Cirugía ortopédica</span>
-								</div>
-							</div>
-						</div>
-						
-						<div class="client-card">
-							<div class="client-image">
-								<img src="/cliente-mascota-2.jpeg" alt="Luna - Gato Persa" class="client-img">
-								<div class="client-overlay">
-									<div class="success-badge">
-										<i class="fas fa-shield-alt"></i>
-										<span>Protegida</span>
-									</div>
-								</div>
-							</div>
-							<div class="client-info">
-								<div class="client-header">
-									<h4 class="client-name">Max y Nina</h4>
-									<div class="client-status">
-										<i class="fas fa-paw"></i>
-										<span>Saludable</span>
-									</div>
-								</div>
-								<div class="client-treatment">
-									<i class="fas fa-syringe"></i>
-									<span>Plan preventivo</span>
-								</div>
-							</div>
-						</div>
-						
-						<div class="client-card">
-							<div class="client-image">
-								<img src="/cliente-mascota-3.jpeg" alt="Rocky - Bulldog Francés" class="client-img">
-								<div class="client-overlay">
-									<div class="success-badge">
-										<i class="fas fa-leaf"></i>
-										<span>Tratado</span>
-									</div>
-								</div>
-							</div>
-							<div class="client-info">
-								<div class="client-header">
-									<h4 class="client-name">Rocky</h4>
-									<div class="client-status">
-										<i class="fas fa-paw"></i>
-										<span>Excelente</span>
-									</div>
-								</div>
-								<div class="client-treatment">
-									<i class="fas fa-pills"></i>
-									<span>Dermatología</span>
-								</div>
-							</div>
-						</div>
-						
-						<div class="client-card">
-							<div class="client-image">
-								<img src="/cliente-mascota-4.jpeg" alt="Bella - Labrador" class="client-img">
-								<div class="client-overlay">
-									<div class="success-badge">
-										<i class="fas fa-calendar-check"></i>
-										<span>Monitoreada</span>
-									</div>
-								</div>
-							</div>
-							<div class="client-info">
-								<div class="client-header">
-									<h4 class="client-name">Bella</h4>
-									<div class="client-status">
-										<i class="fas fa-paw"></i>
-										<span>Activa</span>
-									</div>
-								</div>
-								<div class="client-treatment">
-									<i class="fas fa-heartbeat"></i>
-									<span>Medicina preventiva</span>
-								</div>
-							</div>
-						</div>
-						
-						<div class="client-card">
-							<div class="client-image">
-								<img src="/cliente-mascota-5.jpeg" alt="Mimi - Gato Siamés" class="client-img">
-								<div class="client-overlay">
-									<div class="success-badge">
-										<i class="fas fa-cut"></i>
-										<span>Cuidada</span>
-									</div>
-								</div>
-							</div>
-							<div class="client-info">
-								<div class="client-header">
-									<h4 class="client-name">Mimi</h4>
-									<div class="client-status">
-										<i class="fas fa-paw"></i>
-										<span>Elegante</span>
-									</div>
-								</div>
-								<div class="client-treatment">
-									<i class="fas fa-spa"></i>
-									<span>Estética felina</span>
-								</div>
-							</div>
-						</div>
-						
-						<div class="client-card">
-							<div class="client-image">
-								<img src="/cliente-mascota-6.jpeg" alt="Thor - Pastor Alemán" class="client-img">
-								<div class="client-overlay">
-									<div class="success-badge">
-										<i class="fas fa-running"></i>
-										<span>Recuperado</span>
-									</div>
-								</div>
-							</div>
-							<div class="client-info">
-								<div class="client-header">
-									<h4 class="client-name">Thor</h4>
-									<div class="client-status">
-										<i class="fas fa-paw"></i>
-										<span>Fuerte</span>
-									</div>
-								</div>
-								<div class="client-treatment">
-									<i class="fas fa-dumbbell"></i>
-									<span>Rehabilitación</span>
-								</div>
-							</div>
-						</div>
-						
-						<div class="client-card">
-							<div class="client-image">
-								<img src="/cliente-mascota-7.jpeg" alt="Coco - Conejo Holland Lop" class="client-img">
-								<div class="client-overlay">
-									<div class="success-badge">
-										<i class="fas fa-star"></i>
-										<span>Especial</span>
-									</div>
-								</div>
-							</div>
-							<div class="client-info">
-								<div class="client-header">
-									<h4 class="client-name">Coco</h4>
-									<div class="client-status">
-										<i class="fas fa-paw"></i>
-										<span>Próspero</span>
-									</div>
-								</div>
-								<div class="client-treatment">
-									<i class="fas fa-microscope"></i>
-									<span>Medicina exótica</span>
-								</div>
-							</div>
-						</div>
-						
-						<div class="client-card">
-							<div class="client-image">
-								<img src="/cliente-mascota-8.jpeg" alt="Nala - Husky Siberiano" class="client-img">
-								<div class="client-overlay">
-									<div class="success-badge">
-										<i class="fas fa-weight"></i>
-										<span>En forma</span>
-									</div>
-								</div>
-							</div>
-							<div class="client-info">
-								<div class="client-header">
-									<h4 class="client-name">Nala</h4>
-									<div class="client-status">
-										<i class="fas fa-paw"></i>
-										<span>Atlética</span>
-									</div>
-								</div>
-								<div class="client-treatment">
-									<i class="fas fa-apple-alt"></i>
-									<span>Nutrición clínica</span>
-								</div>
-							</div>
-						</div>
+						{clients.map((client) => (
+							<ClientCard {...client} />
+						))}
 					</div>
 				</div>
 				
@@ -247,29 +126,44 @@
 </section>
 
 <script>
-	// Enhanced Carousel functionality
+	// Enhanced Carousel functionality with mobile fixes
 	document.addEventListener('DOMContentLoaded', function() {
 		const carousel = document.querySelector('#carouselTrack') as HTMLElement;
 		const prevBtn = document.querySelector('#prevBtn') as HTMLButtonElement;
 		const nextBtn = document.querySelector('#nextBtn') as HTMLButtonElement;
 		const cards = document.querySelectorAll('.client-card') as NodeListOf<HTMLElement>;
+		const container = document.querySelector('.carousel-container') as HTMLElement;
 		
-		if (!carousel || !prevBtn || !nextBtn || cards.length === 0) return;
+		if (!carousel || !prevBtn || !nextBtn || cards.length === 0 || !container) return;
 		
 		let currentIndex = 0;
 		let isAnimating = false;
-		const cardWidth = 340; // card width + gap
-		const getVisibleCards = () => {
-			const containerWidth = carousel.parentElement?.offsetWidth || 1200;
-			return Math.floor(containerWidth / cardWidth);
+		
+		// Responsive card widths and gaps
+		const getCardWidth = () => {
+			const screenWidth = window.innerWidth;
+			if (screenWidth <= 480) return 280; // mobile small: 260px card + 20px gap
+			if (screenWidth <= 768) return 300; // mobile: 280px card + 20px gap
+			return 340; // desktop: 320px card + 20px gap
 		};
 		
+		const getVisibleCards = () => {
+			const containerWidth = container.offsetWidth;
+			const cardWidth = getCardWidth();
+			const visibleCards = Math.floor(containerWidth / cardWidth);
+			return Math.max(1, visibleCards); // Always show at least 1 card
+		};
+		
+		let cardWidth = getCardWidth();
 		let visibleCards = getVisibleCards();
 		let maxIndex = Math.max(0, cards.length - visibleCards);
 		
 		function updateCarousel(animate = true) {
-			if (isAnimating) return;
+			if (isAnimating && animate) return;
 			isAnimating = true;
+			
+			// Ensure currentIndex is within bounds
+			currentIndex = Math.max(0, Math.min(currentIndex, maxIndex));
 			
 			const translateX = -currentIndex * cardWidth;
 			carousel.style.transition = animate ? 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)' : 'none';
@@ -277,13 +171,17 @@
 			
 			// Update button states
 			prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
-			nextBtn.style.opacity = currentIndex === maxIndex ? '0.5' : '1';
+			nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
 			prevBtn.disabled = currentIndex === 0;
-			nextBtn.disabled = currentIndex === maxIndex;
+			nextBtn.disabled = currentIndex >= maxIndex;
 			
-			setTimeout(() => {
+			if (animate) {
+				setTimeout(() => {
+					isAnimating = false;
+				}, 600);
+			} else {
 				isAnimating = false;
-			}, 600);
+			}
 		}
 		
 		function nextSlide() {
@@ -303,24 +201,11 @@
 		nextBtn.addEventListener('click', nextSlide);
 		prevBtn.addEventListener('click', prevSlide);
 		
-		// Auto-scroll functionality
-		let autoScrollInterval = setInterval(() => {
-			if (currentIndex < maxIndex) {
-				currentIndex++;
-			} else {
-				currentIndex = 0;
-			}
-			updateCarousel();
-		}, 5000);
+		// Auto-scroll functionality (disabled on mobile for better UX)
+		let autoScrollInterval: NodeJS.Timeout | null = null;
 		
-		// Pause auto-scroll on hover
-		const carouselContainer = document.querySelector('.clients-carousel') as HTMLElement;
-		if (carouselContainer) {
-			carouselContainer.addEventListener('mouseenter', () => {
-				clearInterval(autoScrollInterval);
-			});
-			
-			carouselContainer.addEventListener('mouseleave', () => {
+		function startAutoScroll() {
+			if (window.innerWidth > 768) { // Only on desktop
 				autoScrollInterval = setInterval(() => {
 					if (currentIndex < maxIndex) {
 						currentIndex++;
@@ -329,20 +214,39 @@
 					}
 					updateCarousel();
 				}, 5000);
-			});
+			}
 		}
 		
-		// Touch support for mobile
+		function stopAutoScroll() {
+			if (autoScrollInterval) {
+				clearInterval(autoScrollInterval);
+				autoScrollInterval = null;
+			}
+		}
+		
+		// Start auto-scroll
+		startAutoScroll();
+		
+		// Pause auto-scroll on hover (desktop only)
+		const carouselContainer = document.querySelector('.clients-carousel') as HTMLElement;
+		if (carouselContainer && window.innerWidth > 768) {
+			carouselContainer.addEventListener('mouseenter', stopAutoScroll);
+			carouselContainer.addEventListener('mouseleave', startAutoScroll);
+		}
+		
+		// Enhanced touch support for mobile
 		let startX = 0;
 		let startY = 0;
 		let isDragging = false;
+		let startTime = 0;
 		
 		carousel.addEventListener('touchstart', (e) => {
 			startX = e.touches[0].clientX;
 			startY = e.touches[0].clientY;
+			startTime = Date.now();
 			isDragging = false;
-			clearInterval(autoScrollInterval);
-		});
+			stopAutoScroll();
+		}, { passive: true });
 		
 		carousel.addEventListener('touchmove', (e) => {
 			if (!startX || !startY) return;
@@ -354,14 +258,20 @@
 				isDragging = true;
 				e.preventDefault();
 			}
-		});
+		}, { passive: false });
 		
 		carousel.addEventListener('touchend', (e) => {
-			if (!startX || !startY || !isDragging) return;
+			if (!startX || !startY || !isDragging) {
+				startAutoScroll();
+				return;
+			}
 			
 			const diffX = startX - e.changedTouches[0].clientX;
+			const diffTime = Date.now() - startTime;
+			const velocity = Math.abs(diffX) / diffTime;
 			
-			if (Math.abs(diffX) > 80) {
+			// More sensitive swipe detection
+			if (Math.abs(diffX) > 50 || velocity > 0.3) {
 				if (diffX > 0) {
 					nextSlide();
 				} else {
@@ -372,26 +282,29 @@
 			startX = 0;
 			startY = 0;
 			isDragging = false;
-			
-			// Restart auto-scroll
-			autoScrollInterval = setInterval(() => {
-				if (currentIndex < maxIndex) {
-					currentIndex++;
-				} else {
-					currentIndex = 0;
-				}
-				updateCarousel();
-			}, 5000);
-		});
+			startAutoScroll();
+		}, { passive: true });
 		
-		// Responsive handling
+		// Responsive handling with debouncing
+		let resizeTimeout: NodeJS.Timeout;
 		window.addEventListener('resize', () => {
-			visibleCards = getVisibleCards();
-			maxIndex = Math.max(0, cards.length - visibleCards);
-			if (currentIndex > maxIndex) {
-				currentIndex = maxIndex;
-			}
-			updateCarousel(false);
+			clearTimeout(resizeTimeout);
+			resizeTimeout = setTimeout(() => {
+				cardWidth = getCardWidth();
+				visibleCards = getVisibleCards();
+				maxIndex = Math.max(0, cards.length - visibleCards);
+				
+				// Reset position if out of bounds
+				if (currentIndex > maxIndex) {
+					currentIndex = maxIndex;
+				}
+				
+				updateCarousel(false);
+				
+				// Restart auto-scroll with new conditions
+				stopAutoScroll();
+				startAutoScroll();
+			}, 250);
 		});
 		
 		// Initialize
@@ -463,140 +376,6 @@
 		display: flex;
 		gap: 2rem;
 		transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-	}
-
-	/* Client Cards */
-	.client-card {
-		flex: 0 0 320px;
-		background: white;
-		border-radius: var(--border-radius);
-		overflow: hidden;
-		box-shadow: var(--shadow-medium);
-		border: 1px solid var(--border-color);
-		transition: all 0.4s ease;
-		position: relative;
-		transform: translateY(20px);
-		opacity: 0;
-	}
-
-	.client-card.animate-in {
-		transform: translateY(0);
-		opacity: 1;
-	}
-
-	.client-card:hover {
-		transform: translateY(-12px) scale(1.02);
-		box-shadow: var(--shadow-large);
-	}
-
-	.client-image {
-		height: 200px;
-		overflow: hidden;
-		position: relative;
-	}
-
-	.client-img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		transition: transform 0.4s ease;
-	}
-
-	.client-card:hover .client-img {
-		transform: scale(1.1);
-	}
-
-	.client-overlay {
-		position: absolute;
-		top: 1rem;
-		right: 1rem;
-		z-index: 2;
-	}
-
-	.success-badge {
-		background: rgba(37, 154, 140, 0.95);
-		color: white;
-		padding: 0.5rem 0.75rem;
-		border-radius: 20px;
-		font-size: 0.75rem;
-		font-weight: 600;
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-		backdrop-filter: blur(10px);
-		box-shadow: 0 4px 15px rgba(37, 154, 140, 0.3);
-	}
-
-	.success-badge i {
-		font-size: 0.8rem;
-	}
-
-	/* Client Info */
-	.client-info {
-		padding: 1.5rem;
-	}
-
-	.client-header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin-bottom: 0.5rem;
-	}
-
-	.client-name {
-		font-size: 1.25rem;
-		font-weight: 700;
-		color: var(--text-dark);
-		margin: 0;
-	}
-
-	.client-status {
-		display: flex;
-		align-items: center;
-		gap: 0.25rem;
-		background: rgba(37, 154, 140, 0.1);
-		color: var(--primary-color);
-		padding: 0.25rem 0.5rem;
-		border-radius: 12px;
-		font-size: 0.75rem;
-		font-weight: 600;
-	}
-
-	.client-status i {
-		font-size: 0.7rem;
-	}
-
-	.client-breed {
-		color: var(--text-light);
-		font-weight: 500;
-		font-size: 0.875rem;
-		display: block;
-		margin-bottom: 1rem;
-	}
-
-	.client-story {
-		color: var(--text-light);
-		line-height: 1.6;
-		font-style: italic;
-		margin-bottom: 1rem;
-		font-size: 0.9rem;
-	}
-
-	.client-treatment {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-		color: var(--primary-color);
-		font-weight: 600;
-		font-size: 0.85rem;
-		padding: 0.5rem;
-		background: rgba(37, 154, 140, 0.05);
-		border-radius: 8px;
-		border-left: 3px solid var(--primary-color);
-	}
-
-	.client-treatment i {
-		font-size: 0.9rem;
 	}
 
 	/* Navigation */
@@ -691,18 +470,6 @@
 			gap: 1rem;
 		}
 
-		.client-card {
-			flex: 0 0 280px;
-		}
-
-		.client-image {
-			height: 180px;
-		}
-
-		.client-info {
-			padding: 1.25rem;
-		}
-
 		.clients-stats {
 			grid-template-columns: repeat(2, 1fr);
 			gap: 1rem;
@@ -718,14 +485,8 @@
 	}
 
 	@media (max-width: 480px) {
-		.client-card {
-			flex: 0 0 260px;
-		}
-
-		.client-header {
-			flex-direction: column;
-			align-items: flex-start;
-			gap: 0.5rem;
+		.carousel-track {
+			gap: 1rem;
 		}
 
 		.clients-stats {
@@ -743,19 +504,5 @@
 		}
 	}
 
-	/* Loading animation */
-	@keyframes fadeInUp {
-		from {
-			opacity: 0;
-			transform: translateY(30px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
 
-	.client-card.animate-in {
-		animation: fadeInUp 0.6s ease forwards;
-	}
 </style>
