@@ -131,13 +131,15 @@
 		if (!carousel || !prevBtn || !nextBtn || cards.length === 0) return;
 		
 		let currentIndex = 0;
-		const cardWidth = cards[0].offsetWidth + 32; // card width + gap
-		const visibleCards = Math.floor(carousel.parentElement.offsetWidth / cardWidth);
+		const cardWidth = (cards[0] as HTMLElement).offsetWidth + 32; // card width + gap
+		const visibleCards = carousel.parentElement
+			? Math.floor(carousel.parentElement.offsetWidth / cardWidth)
+			: cards.length;
 		const maxIndex = Math.max(0, cards.length - visibleCards);
 		
 		function updateCarousel() {
 			const translateX = -currentIndex * cardWidth;
-			carousel.style.transform = `translateX(${translateX}px)`;
+			(carousel as HTMLElement).style.transform = `translateX(${translateX}px)`;
 		}
 		
 		nextBtn.addEventListener('click', () => {
@@ -185,15 +187,15 @@
 		let startY = 0;
 		
 		carousel.addEventListener('touchstart', (e) => {
-			startX = e.touches[0].clientX;
-			startY = e.touches[0].clientY;
+			startX = (e as TouchEvent).touches[0].clientX;
+			startY = (e as TouchEvent).touches[0].clientY;
 		});
 		
 		carousel.addEventListener('touchmove', (e) => {
 			if (!startX || !startY) return;
 			
-			const diffX = startX - e.touches[0].clientX;
-			const diffY = startY - e.touches[0].clientY;
+			const diffX = startX - (e as TouchEvent).touches[0].clientX;
+			const diffY = startY - (e as TouchEvent).touches[0].clientY;
 			
 			if (Math.abs(diffX) > Math.abs(diffY)) {
 				e.preventDefault();
@@ -203,7 +205,7 @@
 		carousel.addEventListener('touchend', (e) => {
 			if (!startX || !startY) return;
 			
-			const diffX = startX - e.changedTouches[0].clientX;
+			const diffX = startX - (e as TouchEvent).changedTouches[0].clientX;
 			
 			if (Math.abs(diffX) > 50) {
 				if (diffX > 0 && currentIndex < maxIndex) {

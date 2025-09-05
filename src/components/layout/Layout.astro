@@ -34,11 +34,12 @@ const { title, description = "Guppy Pet - Veterinaria especializada en el cuidad
 				const links = document.querySelectorAll('a[href^="#"]');
 				
 				links.forEach(link => {
-					link.addEventListener('click', function(e) {
-						if (this.getAttribute('href').startsWith('#')) {
+					link.addEventListener('click', (e) => {
+						const anchor = e.currentTarget as HTMLAnchorElement;
+						if (anchor?.getAttribute('href')?.startsWith('#')) {
 							e.preventDefault();
-							const targetId = this.getAttribute('href');
-							const targetElement = document.querySelector(targetId);
+							const targetId = anchor.getAttribute('href');
+							const targetElement = document.querySelector(targetId!);
 							
 							if (targetElement) {
 								targetElement.scrollIntoView({
