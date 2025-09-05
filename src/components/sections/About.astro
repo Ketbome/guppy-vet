@@ -3,23 +3,42 @@
 ---
 
 <section id="sobre-nosotros" class="about">
+	<div class="about__bg-decoration">
+		<div class="floating-shape shape-1"></div>
+		<div class="floating-shape shape-2"></div>
+	</div>
+	
 	<div class="container">
 		<div class="about__container">
 			<div class="about__image">
-				<img src="/guppy-animado.jpeg" alt="Equipo veterinario Guppy Vet" class="about__img">
+				<div class="about__image-wrapper">
+					<img src="/guppy-animado.jpeg" alt="Equipo veterinario Guppy Vet" class="about__img">
+				</div>
+				
 				<div class="about__experience">
-					<span class="about__experience-number">10+</span>
-					<span class="about__experience-text">Años de Experiencia</span>
+					<div class="experience__icon">
+						<i class="fas fa-award"></i>
+					</div>
+					<div class="experience__content">
+						<span class="about__experience-number">10+</span>
+						<span class="about__experience-text">Años de Experiencia</span>
+					</div>
 				</div>
 			</div>
 			
 			<div class="about__content">
-				<span class="section-subtitle">Sobre nosotros</span>
-				<h2 class="section-title">Cuidando mascotas con pasión</h2>
+				<span class="section-subtitle">
+					<i class="fas fa-stethoscope"></i>
+					Sobre nosotros
+				</span>
+				<h2 class="section-title">
+					Cuidando mascotas con 
+					<span class="title-accent">pasión</span>
+				</h2>
 				<p class="about__description">
-					En Guppy Vet somos más que una veterinaria, somos una familia que entiende el amor 
-					incondicional hacia las mascotas. Desde mayo de 2023, nuestro equipo de profesionales 
-					altamente capacitados se dedica a brindar el mejor cuidado médico con calidez humana.
+					En <strong>Guppy Vet</strong> somos una familia que entiende el amor hacia las mascotas. 
+					Ubicados en <em>Macul, cerca del Metro</em>, nuestro equipo se dedica a brindar el mejor 
+					cuidado médico con calidez humana desde mayo de 2023.
 				</p>
 				
 				<div class="about__features">
@@ -29,17 +48,7 @@
 						</div>
 						<div class="feature__content">
 							<h4 class="feature__title">Profesionales Certificados</h4>
-							<p class="feature__description">Veterinarios con años de experiencia y formación continua</p>
-						</div>
-					</div>
-					
-					<div class="feature">
-						<div class="feature__icon">
-							<i class="fas fa-microscope"></i>
-						</div>
-						<div class="feature__content">
-							<h4 class="feature__title">Tecnología Avanzada</h4>
-							<p class="feature__description">Equipos de última generación para diagnósticos precisos</p>
+							<p class="feature__description">Veterinarios con experiencia y formación continua</p>
 						</div>
 					</div>
 					
@@ -49,15 +58,18 @@
 						</div>
 						<div class="feature__content">
 							<h4 class="feature__title">Atención Personalizada</h4>
-							<p class="feature__description">Cada mascota recibe cuidado individual y personalizado</p>
+							<p class="feature__description">Cada mascota recibe cuidado individual</p>
 						</div>
 					</div>
 				</div>
 				
-				<a href="#contacto" class="btn btn--primary">
-					<i class="fas fa-phone"></i>
-					Agenda tu Cita
-				</a>
+				<div class="about__cta">
+					<a href="#contacto" class="btn btn--primary btn--enhanced">
+						<i class="fas fa-calendar-plus"></i>
+						<span>Agenda tu Cita</span>
+						<div class="btn__shine"></div>
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -66,81 +78,237 @@
 <style>
 	/* About Section */
 	.about {
+		position: relative;
 		padding: 6rem 0;
-		background: linear-gradient(135deg, #f8fffe 0%, #edfaf9 100%);
+		background: linear-gradient(135deg, #f0fdfa 0%, #ecfdf5 50%, #edfaf9 100%);
+		overflow: hidden;
+	}
+
+	/* Background Decorations */
+	.about__bg-decoration {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		z-index: 1;
+	}
+
+	.floating-shape {
+		position: absolute;
+		border-radius: 50%;
+		background: linear-gradient(135deg, rgba(16, 185, 129, 0.06), rgba(34, 197, 94, 0.03));
+		animation: float 8s ease-in-out infinite;
+	}
+
+	.shape-1 {
+		width: 120px;
+		height: 120px;
+		top: 20%;
+		right: 15%;
+		animation-delay: 0s;
+	}
+
+	.shape-2 {
+		width: 80px;
+		height: 80px;
+		top: 60%;
+		left: 10%;
+		animation-delay: 4s;
+	}
+
+	@keyframes float {
+		0%, 100% { transform: translateY(0px); opacity: 0.5; }
+		50% { transform: translateY(-20px); opacity: 1; }
 	}
 
 	.about__container {
+		position: relative;
+		z-index: 2;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 4rem;
+		gap: 5rem;
 		align-items: center;
 	}
 
+	/* Image Section */
 	.about__image {
 		position: relative;
+		animation: slideInLeft 1s ease-out;
+	}
+
+	@keyframes slideInLeft {
+		from { opacity: 0; transform: translateX(-30px); }
+		to { opacity: 1; transform: translateX(0); }
+	}
+
+	.about__image-wrapper {
+		position: relative;
+		overflow: hidden;
+		border-radius: 20px;
+		box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+		transition: all 0.3s ease;
+	}
+
+	.about__image-wrapper:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
 	}
 
 	.about__img {
-		width: 80%;
-		height: 500px;
-		border-radius: 20px;
-		box-shadow: var(--shadow-large);
-        object-fit: cover;
+		width: 100%;
+		height: 400px;
+		object-fit: cover;
+		object-position: center;
+		transition: transform 0.3s ease;
 	}
 
+	.about__image-wrapper:hover .about__img {
+		transform: scale(1.03);
+	}
+
+	/* Experience Badge */
 	.about__experience {
 		position: absolute;
-		bottom: 2rem;
-		left: 2rem;
-		background: var(--primary-color);
-		color: white;
+		bottom: -15px;
+		left: 20px;
+		background: white;
 		padding: 1.5rem;
-		border-radius: var(--border-radius);
-		text-align: center;
-		box-shadow: var(--shadow-medium);
+		border-radius: 15px;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		border: 2px solid var(--primary-color);
+	}
+
+	.experience__icon {
+		width: 50px;
+		height: 50px;
+		background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+		border-radius: 12px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-size: 1.5rem;
 	}
 
 	.about__experience-number {
 		display: block;
-		font-size: 2.5rem;
-		font-weight: 700;
+		font-size: 2rem;
+		font-weight: 800;
+		color: var(--primary-color);
 		line-height: 1;
+		margin-bottom: 0.2rem;
 	}
 
 	.about__experience-text {
-		font-size: 0.875rem;
-		font-weight: 500;
+		font-size: 0.8rem;
+		font-weight: 600;
+		color: var(--text-light);
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 	}
 
+	/* Content Section */
 	.about__content {
-		text-align: left;
+		animation: slideInRight 1s ease-out;
+	}
+
+	@keyframes slideInRight {
+		from { opacity: 0; transform: translateX(30px); }
+		to { opacity: 1; transform: translateX(0); }
+	}
+
+	.section-subtitle {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: var(--primary-color);
+		font-weight: 600;
+		font-size: 0.9rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		margin-bottom: 1rem;
+		padding: 0.5rem 1rem;
+		background: rgba(16, 185, 129, 0.1);
+		border-radius: 25px;
+		border: 1px solid rgba(16, 185, 129, 0.2);
+	}
+
+	.section-title {
+		font-size: 2.5rem;
+		font-weight: 800;
+		color: var(--text-dark);
+		margin-bottom: 1.5rem;
+		line-height: 1.2;
+	}
+
+	.title-accent {
+		color: var(--primary-color);
+		position: relative;
+	}
+
+	.title-accent::after {
+		content: '';
+		position: absolute;
+		bottom: 2px;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background: var(--primary-color);
+		border-radius: 1px;
+		opacity: 0.7;
 	}
 
 	.about__description {
-		font-size: 1.125rem;
+		font-size: 1.1rem;
 		color: var(--text-light);
-		line-height: 1.7;
+		line-height: 1.6;
 		margin-bottom: 2.5rem;
 	}
 
+	.about__description strong {
+		color: var(--primary-color);
+		font-weight: 700;
+	}
+
+	.about__description em {
+		color: var(--accent-color);
+		font-style: normal;
+		font-weight: 600;
+	}
+
+	/* Features */
 	.about__features {
 		margin-bottom: 2.5rem;
 	}
 
 	.feature {
 		display: flex;
-		gap: 1rem;
-		margin-bottom: 2rem;
+		gap: 1.2rem;
+		margin-bottom: 1.8rem;
+		padding: 1.5rem;
+		background: white;
+		border-radius: 15px;
+		box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+		border: 1px solid rgba(16, 185, 129, 0.1);
+		transition: all 0.3s ease;
+	}
+
+	.feature:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+		border-color: var(--primary-color);
 	}
 
 	.feature__icon {
 		width: 60px;
 		height: 60px;
 		background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-		border-radius: var(--border-radius);
+		border-radius: 15px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -150,26 +318,142 @@
 	}
 
 	.feature__title {
-		font-size: 1.125rem;
-		font-weight: 600;
+		font-size: 1.2rem;
+		font-weight: 700;
 		color: var(--text-dark);
 		margin-bottom: 0.5rem;
 	}
 
 	.feature__description {
 		color: var(--text-light);
-		line-height: 1.6;
+		line-height: 1.5;
 	}
 
+	/* CTA Section */
+	.about__cta {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		align-items: flex-start;
+	}
+
+	.btn--enhanced {
+		position: relative;
+		overflow: hidden;
+		padding: 1rem 2rem;
+		font-size: 1rem;
+		font-weight: 600;
+		background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+		border: none;
+		box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+		transition: all 0.3s ease;
+	}
+
+	.btn--enhanced:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 12px 35px rgba(16, 185, 129, 0.4);
+	}
+
+	.btn__shine {
+		position: absolute;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+		transition: left 0.6s;
+	}
+
+	.btn--enhanced:hover .btn__shine {
+		left: 100%;
+	}
+
+	.cta-info {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: var(--text-light);
+		font-weight: 500;
+		font-size: 0.9rem;
+		padding: 0.5rem 1rem;
+		background: rgba(16, 185, 129, 0.08);
+		border-radius: 25px;
+	}
+
+	.cta-info i {
+		color: var(--primary-color);
+	}
+
+	/* Responsive Design */
 	@media (max-width: 768px) {
+		.about {
+			padding: 4rem 0;
+		}
+
 		.about__container {
 			grid-template-columns: 1fr;
+			gap: 3rem;
+		}
+
+		.about__content {
+			text-align: center;
+		}
+
+		.section-title {
+			font-size: 2rem;
+		}
+
+		.about__description {
+			font-size: 1rem;
+		}
+
+		.about__img {
+			height: 300px;
 		}
 
 		.about__experience {
 			position: static;
-			display: inline-block;
-			margin-top: 1rem;
+			display: inline-flex;
+			margin-top: 1.5rem;
+		}
+
+		.feature {
+			flex-direction: column;
+			text-align: center;
+			gap: 1rem;
+		}
+
+		.about__cta {
+			align-items: center;
+		}
+
+		.btn--enhanced {
+			width: 100%;
+			max-width: 280px;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.about {
+			padding: 3rem 0;
+		}
+
+		.section-title {
+			font-size: 1.8rem;
+		}
+
+		.about__img {
+			height: 250px;
+		}
+
+		.feature {
+			padding: 1.2rem;
+		}
+
+		.feature__icon {
+			width: 50px;
+			height: 50px;
+			font-size: 1.3rem;
 		}
 	}
 </style>
