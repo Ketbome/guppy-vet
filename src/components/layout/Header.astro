@@ -1,12 +1,13 @@
 ---
+import { Image } from "astro:assets";
+
 
 ---
 
 <header class="header">
 	<nav class="nav container">
 		<div class="nav__logo">
-			<img src="/logo-guppy.png" alt="Guppy Pet Logo" class="nav__logo-img">
-			<span class="nav__logo-text">Guppy Pet</span>
+			<Image src="/logo.png" alt="Guppy Pet Logo" class="nav__logo-img" width="100" height="70" />
 		</div>
 		
 		<ul class="nav__menu">
@@ -63,8 +64,8 @@
 	}
 
 	.nav__logo-img {
-		width: 40px;
-		height: 40px;
+		width: 100px;
+		height: 70px;
 	}
 
 	.nav__logo-text {
