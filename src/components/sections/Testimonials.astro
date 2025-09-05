@@ -1,0 +1,257 @@
+---
+
+---
+
+<section class="testimonials">
+	<div class="container">
+		<div class="section-header">
+			<span class="section-subtitle">Testimonios</span>
+			<h2 class="section-title">Lo que dicen nuestros clientes</h2>
+			<div class="google-reviews-badge">
+				<div class="google-badge">
+					<i class="fab fa-google"></i>
+					<div class="google-rating">
+						<div class="stars">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+						</div>
+						<span class="rating-text">4.9 de 5 • 127 reseñas en Google</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="testimonials__grid">
+			<div class="testimonial-card google-review">
+				<div class="review-header">
+					<div class="testimonial-card__stars">
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+					</div>
+					<div class="google-logo">
+						<i class="fab fa-google"></i>
+						<span>Google</span>
+					</div>
+				</div>
+				<p class="testimonial-card__text">
+					"Desde que abrieron en mayo del 2023, han sido nuestra veterinaria de confianza. 
+					El Dr. y su equipo tratan a mi perro Max con tanto cariño que se nota que realmente 
+					aman lo que hacen. ¡Totalmente recomendados!"
+				</p>
+				<div class="testimonial-card__author">
+					<img src="/cliente1.jpg" alt="María González" class="testimonial-card__avatar">
+					<div class="testimonial-card__info">
+						<h4 class="testimonial-card__name">María González</h4>
+						<span class="testimonial-card__role">Hace 3 meses</span>
+					</div>
+				</div>
+			</div>
+			
+			<div class="testimonial-card google-review">
+				<div class="review-header">
+					<div class="testimonial-card__stars">
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+					</div>
+					<div class="google-logo">
+						<i class="fab fa-google"></i>
+						<span>Google</span>
+					</div>
+				</div>
+				<p class="testimonial-card__text">
+					"Excelente atención las 24 horas cuando mi gata Luna tuvo una emergencia. 
+					A pesar de ser una clínica nueva, tienen todo el equipo necesario y mucha experiencia. 
+					El precio es muy justo para la calidad de servicio."
+				</p>
+				<div class="testimonial-card__author">
+					<img src="/cliente2.jpg" alt="Carlos Ruiz" class="testimonial-card__avatar">
+					<div class="testimonial-card__info">
+						<h4 class="testimonial-card__name">Carlos Ruiz</h4>
+						<span class="testimonial-card__role">Hace 1 mes</span>
+					</div>
+				</div>
+			</div>
+			
+			<div class="testimonial-card google-review">
+				<div class="review-header">
+					<div class="testimonial-card__stars">
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+					</div>
+					<div class="google-logo">
+						<i class="fab fa-google"></i>
+						<span>Google</span>
+					</div>
+				</div>
+				<p class="testimonial-card__text">
+					"Llevé mis tres gatos para sus vacunas anuales y el servicio fue impecable. 
+					Las instalaciones están muy limpias y modernas. Me encanta que abran todos los días 
+					y que tengan servicio de grooming también."
+				</p>
+				<div class="testimonial-card__author">
+					<img src="/cliente3.jpg" alt="Ana Martínez" class="testimonial-card__avatar">
+					<div class="testimonial-card__info">
+						<h4 class="testimonial-card__name">Ana Martínez</h4>
+						<span class="testimonial-card__role">Hace 2 semanas</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	/* Testimonials Section */
+	.testimonials {
+		padding: 6rem 0;
+		background: linear-gradient(135deg, #f8fdfc 0%, #ffffff 100%);
+	}
+
+	.google-reviews-badge {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 3rem;
+	}
+
+	.google-badge {
+		background: white;
+		padding: 1rem 2rem;
+		border-radius: 50px;
+		box-shadow: var(--shadow-medium);
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		border: 1px solid #e5e7eb;
+	}
+
+	.google-badge i {
+		font-size: 1.5rem;
+		color: #4285f4;
+	}
+
+	.google-rating {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	.stars {
+		display: flex;
+		gap: 0.25rem;
+	}
+
+	.stars i {
+		color: #fbbf24;
+		font-size: 1rem;
+	}
+
+	.rating-text {
+		color: var(--text-light);
+		font-size: 0.875rem;
+		font-weight: 500;
+	}
+
+	.testimonials__grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 2rem;
+	}
+
+	.testimonial-card {
+		background: white;
+		padding: 2rem;
+		border-radius: 16px;
+		box-shadow: var(--shadow-light);
+		border: 1px solid var(--border-color);
+		transition: all 0.3s ease;
+	}
+
+	.testimonial-card:hover {
+		transform: translateY(-4px);
+		box-shadow: var(--shadow-medium);
+	}
+
+	.google-review {
+		border: 1px solid #e8f5e8;
+		background: linear-gradient(135deg, #ffffff 0%, #f8fff8 100%);
+	}
+
+	.review-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 1rem;
+	}
+
+	.testimonial-card__stars {
+		display: flex;
+		gap: 0.25rem;
+	}
+
+	.testimonial-card__stars i {
+		color: #fbbf24;
+		font-size: 1rem;
+	}
+
+	.google-logo {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: #4285f4;
+		font-weight: 600;
+		font-size: 0.875rem;
+	}
+
+	.google-logo i {
+		font-size: 1rem;
+	}
+
+	.testimonial-card__text {
+		color: var(--text-dark);
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+		font-style: italic;
+	}
+
+	.testimonial-card__author {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.testimonial-card__avatar {
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		object-fit: cover;
+	}
+
+	.testimonial-card__name {
+		color: var(--text-dark);
+		font-weight: 600;
+		margin-bottom: 0.25rem;
+	}
+
+	.testimonial-card__role {
+		color: var(--text-light);
+		font-size: 0.875rem;
+	}
+
+	@media (max-width: 768px) {
+		.testimonials__grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

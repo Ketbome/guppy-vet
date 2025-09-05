@@ -1,0 +1,363 @@
+---
+
+---
+
+<section class="happy-clients">
+	<div class="container">
+		<div class="section-header">
+			<span class="section-subtitle">Nuestros amigos</span>
+			<h2 class="section-title">Clientes Felices</h2>
+			<p class="section-description">
+				Conoce a algunas de las adorables mascotas que confiaron en nosotros para su cuidado
+			</p>
+		</div>
+		
+		<div class="clients-carousel">
+			<div class="carousel-container">
+				<div class="carousel-track">
+					<div class="client-card">
+						<div class="client-image">
+							<img src="/cliente-mascota-1.jpg" alt="Max - Golden Retriever" class="client-img">
+						</div>
+						<div class="client-info">
+							<h4 class="client-name">Max</h4>
+							<span class="client-breed">Golden Retriever</span>
+							<p class="client-story">"Recuperación total después de su cirugía"</p>
+						</div>
+					</div>
+					
+					<div class="client-card">
+						<div class="client-image">
+							<img src="/cliente-mascota-2.jpg" alt="Luna - Gato Persa" class="client-img">
+						</div>
+						<div class="client-info">
+							<h4 class="client-name">Luna</h4>
+							<span class="client-breed">Gato Persa</span>
+							<p class="client-story">"Vacunas al día y muy saludable"</p>
+						</div>
+					</div>
+					
+					<div class="client-card">
+						<div class="client-image">
+							<img src="/cliente-mascota-3.jpg" alt="Rocky - Bulldog Francés" class="client-img">
+						</div>
+						<div class="client-info">
+							<h4 class="client-name">Rocky</h4>
+							<span class="client-breed">Bulldog Francés</span>
+							<p class="client-story">"Tratamiento exitoso de alergias"</p>
+						</div>
+					</div>
+					
+					<div class="client-card">
+						<div class="client-image">
+							<img src="/cliente-mascota-4.jpg" alt="Bella - Labrador" class="client-img">
+						</div>
+						<div class="client-info">
+							<h4 class="client-name">Bella</h4>
+							<span class="client-breed">Labrador</span>
+							<p class="client-story">"Chequeos regulares y muy activa"</p>
+						</div>
+					</div>
+					
+					<div class="client-card">
+						<div class="client-image">
+							<img src="/cliente-mascota-5.jpg" alt="Mimi - Gato Siamés" class="client-img">
+						</div>
+						<div class="client-info">
+							<h4 class="client-name">Mimi</h4>
+							<span class="client-breed">Gato Siamés</span>
+							<p class="client-story">"Grooming profesional mensual"</p>
+						</div>
+					</div>
+					
+					<div class="client-card">
+						<div class="client-image">
+							<img src="/cliente-mascota-6.jpg" alt="Thor - Pastor Alemán" class="client-img">
+						</div>
+						<div class="client-info">
+							<h4 class="client-name">Thor</h4>
+							<span class="client-breed">Pastor Alemán</span>
+							<p class="client-story">"Recuperación de lesión en pata"</p>
+						</div>
+					</div>
+					
+					<div class="client-card">
+						<div class="client-image">
+							<img src="/cliente-mascota-7.jpg" alt="Coco - Conejo Holland Lop" class="client-img">
+						</div>
+						<div class="client-info">
+							<h4 class="client-name">Coco</h4>
+							<span class="client-breed">Conejo Holland Lop</span>
+							<p class="client-story">"Cuidado especializado en exóticos"</p>
+						</div>
+					</div>
+					
+					<div class="client-card">
+						<div class="client-image">
+							<img src="/cliente-mascota-8.jpg" alt="Nala - Husky Siberiano" class="client-img">
+						</div>
+						<div class="client-info">
+							<h4 class="client-name">Nala</h4>
+							<span class="client-breed">Husky Siberiano</span>
+							<p class="client-story">"Control de peso exitoso"</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="carousel-controls">
+				<button class="carousel-btn carousel-btn--prev" aria-label="Anterior">
+					<i class="fas fa-chevron-left"></i>
+				</button>
+				<button class="carousel-btn carousel-btn--next" aria-label="Siguiente">
+					<i class="fas fa-chevron-right"></i>
+				</button>
+			</div>
+			
+			<div class="carousel-fade carousel-fade--left"></div>
+			<div class="carousel-fade carousel-fade--right"></div>
+		</div>
+	</div>
+</section>
+
+<script>
+	// Carousel functionality
+	document.addEventListener('DOMContentLoaded', function() {
+		const carousel = document.querySelector('.carousel-track');
+		const prevBtn = document.querySelector('.carousel-btn--prev');
+		const nextBtn = document.querySelector('.carousel-btn--next');
+		const cards = document.querySelectorAll('.client-card');
+		
+		if (!carousel || !prevBtn || !nextBtn || cards.length === 0) return;
+		
+		let currentIndex = 0;
+		const cardWidth = cards[0].offsetWidth + 32; // card width + gap
+		const visibleCards = Math.floor(carousel.parentElement.offsetWidth / cardWidth);
+		const maxIndex = Math.max(0, cards.length - visibleCards);
+		
+		function updateCarousel() {
+			const translateX = -currentIndex * cardWidth;
+			carousel.style.transform = `translateX(${translateX}px)`;
+		}
+		
+		nextBtn.addEventListener('click', () => {
+			if (currentIndex < maxIndex) {
+				currentIndex++;
+				updateCarousel();
+			}
+		});
+		
+		prevBtn.addEventListener('click', () => {
+			if (currentIndex > 0) {
+				currentIndex--;
+				updateCarousel();
+			}
+		});
+		
+		// Auto-scroll functionality
+		let autoScrollInterval = setInterval(() => {
+			if (currentIndex < maxIndex) {
+				currentIndex++;
+			} else {
+				currentIndex = 0;
+			}
+			updateCarousel();
+		}, 4000);
+		
+		// Pause auto-scroll on hover
+		carousel.addEventListener('mouseenter', () => {
+			clearInterval(autoScrollInterval);
+		});
+		
+		carousel.addEventListener('mouseleave', () => {
+			autoScrollInterval = setInterval(() => {
+				if (currentIndex < maxIndex) {
+					currentIndex++;
+				} else {
+					currentIndex = 0;
+				}
+				updateCarousel();
+			}, 4000);
+		});
+		
+		// Touch support for mobile
+		let startX = 0;
+		let startY = 0;
+		
+		carousel.addEventListener('touchstart', (e) => {
+			startX = e.touches[0].clientX;
+			startY = e.touches[0].clientY;
+		});
+		
+		carousel.addEventListener('touchmove', (e) => {
+			if (!startX || !startY) return;
+			
+			const diffX = startX - e.touches[0].clientX;
+			const diffY = startY - e.touches[0].clientY;
+			
+			if (Math.abs(diffX) > Math.abs(diffY)) {
+				e.preventDefault();
+			}
+		});
+		
+		carousel.addEventListener('touchend', (e) => {
+			if (!startX || !startY) return;
+			
+			const diffX = startX - e.changedTouches[0].clientX;
+			
+			if (Math.abs(diffX) > 50) {
+				if (diffX > 0 && currentIndex < maxIndex) {
+					currentIndex++;
+				} else if (diffX < 0 && currentIndex > 0) {
+					currentIndex--;
+				}
+				updateCarousel();
+			}
+			
+			startX = 0;
+			startY = 0;
+		});
+	});
+</script>
+
+<style>
+	/* Happy Clients Section */
+	.happy-clients {
+		padding: 6rem 0;
+		background: var(--text-white);
+	}
+
+	.clients-carousel {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.carousel-container {
+		overflow: hidden;
+		margin: 0 2rem;
+	}
+
+	.carousel-track {
+		display: flex;
+		gap: 2rem;
+		transition: transform 0.5s ease;
+	}
+
+	.client-card {
+		flex: 0 0 300px;
+		background: white;
+		border-radius: 16px;
+		overflow: hidden;
+		box-shadow: var(--shadow-light);
+		border: 1px solid var(--border-color);
+		transition: all 0.3s ease;
+	}
+
+	.client-card:hover {
+		transform: translateY(-8px);
+		box-shadow: var(--shadow-large);
+	}
+
+	.client-image {
+		height: 250px;
+		overflow: hidden;
+	}
+
+	.client-img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s ease;
+	}
+
+	.client-card:hover .client-img {
+		transform: scale(1.05);
+	}
+
+	.client-info {
+		padding: 1.5rem;
+		text-align: center;
+	}
+
+	.client-name {
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: var(--text-dark);
+		margin-bottom: 0.5rem;
+	}
+
+	.client-breed {
+		color: var(--primary-color);
+		font-weight: 600;
+		font-size: 0.875rem;
+		display: block;
+		margin-bottom: 1rem;
+	}
+
+	.client-story {
+		color: var(--text-light);
+		font-style: italic;
+		line-height: 1.5;
+	}
+
+	.carousel-controls {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+		margin-top: 3rem;
+	}
+
+	.carousel-btn {
+		width: 50px;
+		height: 50px;
+		border: none;
+		border-radius: 50%;
+		background: var(--primary-color);
+		color: white;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 1.25rem;
+	}
+
+	.carousel-btn:hover {
+		background: var(--accent-color);
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-medium);
+	}
+
+	.carousel-fade {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 2rem;
+		pointer-events: none;
+		z-index: 10;
+	}
+
+	.carousel-fade--left {
+		left: 0;
+		background: linear-gradient(to right, white, transparent);
+	}
+
+	.carousel-fade--right {
+		right: 0;
+		background: linear-gradient(to left, white, transparent);
+	}
+
+	@media (max-width: 768px) {
+		.carousel-container {
+			margin: 0;
+		}
+
+		.client-card {
+			flex: 0 0 280px;
+		}
+
+		.carousel-fade {
+			display: none;
+		}
+	}
+</style>

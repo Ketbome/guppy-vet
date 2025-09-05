@@ -1,0 +1,174 @@
+---
+
+---
+
+<section id="sobre-nosotros" class="about">
+	<div class="container">
+		<div class="about__container">
+			<div class="about__image">
+				<img src="/veterinario-guppy.jpg" alt="Equipo veterinario Guppy Pet" class="about__img">
+				<div class="about__experience">
+					<span class="about__experience-number">2+</span>
+					<span class="about__experience-text">Años de Experiencia</span>
+				</div>
+			</div>
+			
+			<div class="about__content">
+				<span class="section-subtitle">Sobre nosotros</span>
+				<h2 class="section-title">Cuidando mascotas con pasión</h2>
+				<p class="about__description">
+					En Guppy Pet somos más que una veterinaria, somos una familia que entiende el amor 
+					incondicional hacia las mascotas. Desde mayo de 2023, nuestro equipo de profesionales 
+					altamente capacitados se dedica a brindar el mejor cuidado médico con calidez humana.
+				</p>
+				
+				<div class="about__features">
+					<div class="feature">
+						<div class="feature__icon">
+							<i class="fas fa-user-md"></i>
+						</div>
+						<div class="feature__content">
+							<h4 class="feature__title">Profesionales Certificados</h4>
+							<p class="feature__description">Veterinarios con años de experiencia y formación continua</p>
+						</div>
+					</div>
+					
+					<div class="feature">
+						<div class="feature__icon">
+							<i class="fas fa-microscope"></i>
+						</div>
+						<div class="feature__content">
+							<h4 class="feature__title">Tecnología Avanzada</h4>
+							<p class="feature__description">Equipos de última generación para diagnósticos precisos</p>
+						</div>
+					</div>
+					
+					<div class="feature">
+						<div class="feature__icon">
+							<i class="fas fa-heart"></i>
+						</div>
+						<div class="feature__content">
+							<h4 class="feature__title">Atención Personalizada</h4>
+							<p class="feature__description">Cada mascota recibe cuidado individual y personalizado</p>
+						</div>
+					</div>
+				</div>
+				
+				<a href="#contacto" class="btn btn--primary">
+					<i class="fas fa-phone"></i>
+					Agenda tu Cita
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	/* About Section */
+	.about {
+		padding: 6rem 0;
+		background: linear-gradient(135deg, #f8fdfc 0%, #ffffff 100%);
+	}
+
+	.about__container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 4rem;
+		align-items: center;
+	}
+
+	.about__image {
+		position: relative;
+	}
+
+	.about__img {
+		width: 100%;
+		height: auto;
+		border-radius: 20px;
+		box-shadow: var(--shadow-large);
+	}
+
+	.about__experience {
+		position: absolute;
+		bottom: 2rem;
+		left: 2rem;
+		background: var(--primary-color);
+		color: white;
+		padding: 1.5rem;
+		border-radius: var(--border-radius);
+		text-align: center;
+		box-shadow: var(--shadow-medium);
+	}
+
+	.about__experience-number {
+		display: block;
+		font-size: 2.5rem;
+		font-weight: 700;
+		line-height: 1;
+	}
+
+	.about__experience-text {
+		font-size: 0.875rem;
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.about__content {
+		text-align: left;
+	}
+
+	.about__description {
+		font-size: 1.125rem;
+		color: var(--text-light);
+		line-height: 1.7;
+		margin-bottom: 2.5rem;
+	}
+
+	.about__features {
+		margin-bottom: 2.5rem;
+	}
+
+	.feature {
+		display: flex;
+		gap: 1rem;
+		margin-bottom: 2rem;
+	}
+
+	.feature__icon {
+		width: 60px;
+		height: 60px;
+		background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+		border-radius: var(--border-radius);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-size: 1.5rem;
+		flex-shrink: 0;
+	}
+
+	.feature__title {
+		font-size: 1.125rem;
+		font-weight: 600;
+		color: var(--text-dark);
+		margin-bottom: 0.5rem;
+	}
+
+	.feature__description {
+		color: var(--text-light);
+		line-height: 1.6;
+	}
+
+	@media (max-width: 768px) {
+		.about__container {
+			grid-template-columns: 1fr;
+		}
+
+		.about__experience {
+			position: static;
+			display: inline-block;
+			margin-top: 1rem;
+		}
+	}
+</style>

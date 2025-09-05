@@ -1,0 +1,437 @@
+---
+
+---
+
+<section id="contacto" class="contact">
+	<div class="container">
+		<div class="section-header">
+			<span class="section-subtitle">Contacto</span>
+			<h2 class="section-title">¿Listo para cuidar a tu mascota?</h2>
+			<p class="section-description">
+				Agenda tu cita por WhatsApp, Instagram o llamando directamente. Estamos aquí para ayudarte y cuidar de tu mascota.
+			</p>
+		</div>
+		
+		<div class="contact__container">
+			<!-- Quick Actions -->
+			<div class="quick-actions">
+				<div class="quick-action-card whatsapp-card">
+					<div class="quick-action-icon">
+						<i class="fab fa-whatsapp"></i>
+					</div>
+					<div class="quick-action-content">
+						<h3>WhatsApp</h3>
+						<p>Respuesta inmediata</p>
+						<span class="phone-number">+56 9 9243 4668</span>
+					</div>
+					<a href="https://wa.me/56992434668?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20para%20mi%20mascota" 
+					   class="quick-action-btn whatsapp-btn" target="_blank">
+						<i class="fab fa-whatsapp"></i>
+						Enviar Mensaje
+					</a>
+				</div>
+				
+				<div class="quick-action-card phone-card">
+					<div class="quick-action-icon">
+						<i class="fas fa-phone"></i>
+					</div>
+					<div class="quick-action-content">
+						<h3>Llamar Ahora</h3>
+						<p>Atención personalizada</p>
+						<span class="phone-number">Celular / Fijo</span>
+					</div>
+					<div class="phone-buttons">
+						<a href="tel:+56992434668" class="quick-action-btn phone-btn">
+							<i class="fas fa-mobile-alt"></i>
+							Celular
+						</a>
+						<a href="tel:+56223434208" class="quick-action-btn phone-btn">
+							<i class="fas fa-phone"></i>
+							Fijo
+						</a>
+					</div>
+				</div>
+				
+				<div class="quick-action-card instagram-card">
+					<div class="quick-action-icon">
+						<i class="fab fa-instagram"></i>
+					</div>
+					<div class="quick-action-content">
+						<h3>Instagram</h3>
+						<p>Síguenos y envía DM</p>
+						<span class="phone-number">@guppyvet</span>
+					</div>
+					<a href="https://instagram.com/guppyvet" 
+					   class="quick-action-btn instagram-btn" target="_blank">
+						<i class="fab fa-instagram"></i>
+						Ir a Instagram
+					</a>
+				</div>
+			</div>
+			
+			<!-- Contact Information -->
+			<div class="contact-info-grid">
+				<div class="info-card location-card">
+					<div class="info-icon">
+						<i class="fas fa-map-marker-alt"></i>
+					</div>
+					<div class="info-content">
+						<h4>Nuestra Ubicación</h4>
+						<p>Av. Macul 6035, Local 7<br>Macul, Santiago</p>
+						<a href="https://maps.google.com/?q=Av.+Macul+6035,+Local+7,+Macul,+Santiago" 
+						   target="_blank" class="info-link">
+							<i class="fas fa-external-link-alt"></i>
+							Ver en Google Maps
+						</a>
+					</div>
+				</div>
+				
+				<div class="info-card schedule-card">
+					<div class="info-icon">
+						<i class="fas fa-clock"></i>
+					</div>
+					<div class="info-content">
+						<h4>Horarios de Atención</h4>
+						<div class="schedule-list">
+							<div class="schedule-item">
+								<span class="day">Lunes a Viernes</span>
+								<span class="time">11:30 - 20:00 hrs</span>
+							</div>
+							<div class="schedule-item">
+								<span class="day">Sábados</span>
+								<span class="time">11:00 - 19:00 hrs</span>
+							</div>
+							<div class="schedule-item closed">
+								<span class="day">Domingos</span>
+								<span class="time">Cerrado</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="info-card services-card">
+					<div class="info-icon">
+						<i class="fas fa-home"></i>
+					</div>
+					<div class="info-content">
+						<h4>Servicios Especiales</h4>
+						<ul class="services-list">
+							<li><i class="fas fa-check"></i>Atención a domicilio</li>
+							<li><i class="fas fa-check"></i>Venta de medicamentos</li>
+							<li><i class="fas fa-check"></i>Accesorios para mascotas</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	/* Contact Section */
+	.contact {
+		background: linear-gradient(135deg, #f8fdfc 0%, #ffffff 100%);
+		padding: 6rem 0;
+	}
+
+	.contact .section-header {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+
+	.contact .section-description {
+		max-width: 600px;
+		margin: 0 auto;
+		color: #6b7280;
+		font-size: 1.125rem;
+		line-height: 1.7;
+	}
+
+	.contact__container {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	/* Quick Actions Cards */
+	.quick-actions {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		margin-bottom: 4rem;
+	}
+
+	.quick-action-card {
+		background: white;
+		border-radius: 16px;
+		padding: 2rem;
+		box-shadow: 0 4px 20px rgba(37, 154, 140, 0.08);
+		border: 1px solid rgba(37, 154, 140, 0.1);
+		transition: all 0.3s ease;
+		text-align: center;
+	}
+
+	.quick-action-card:hover {
+		transform: translateY(-8px);
+		box-shadow: 0 12px 40px rgba(37, 154, 140, 0.15);
+	}
+
+	.quick-action-icon {
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto 1.5rem;
+		font-size: 2rem;
+	}
+
+	.whatsapp-card .quick-action-icon {
+		background: linear-gradient(135deg, #25d366, #128c7e);
+		color: white;
+	}
+
+	.phone-card .quick-action-icon {
+		background: linear-gradient(135deg, #259a8c, #1d7a6f);
+		color: white;
+	}
+
+	.instagram-card .quick-action-icon {
+		background: linear-gradient(135deg, #e1306c, #fd1d1d, #fcb045);
+		color: white;
+	}
+
+	.quick-action-content h3 {
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: #1f2937;
+		margin-bottom: 0.5rem;
+	}
+
+	.quick-action-content p {
+		color: #6b7280;
+		margin-bottom: 1rem;
+	}
+
+	.phone-number {
+		display: block;
+		font-weight: 600;
+		color: #259a8c;
+		font-size: 1.125rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.quick-action-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.875rem 1.5rem;
+		border-radius: 12px;
+		font-weight: 600;
+		text-decoration: none;
+		transition: all 0.3s ease;
+		border: none;
+		cursor: pointer;
+		font-size: 0.95rem;
+	}
+
+	.whatsapp-btn {
+		background: linear-gradient(135deg, #25d366, #128c7e);
+		color: white;
+		width: 100%;
+		justify-content: center;
+	}
+
+	.whatsapp-btn:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+	}
+
+	.phone-buttons {
+		display: flex;
+		gap: 0.75rem;
+	}
+
+	.phone-btn {
+		background: linear-gradient(135deg, #259a8c, #1d7a6f);
+		color: white;
+		flex: 1;
+		justify-content: center;
+	}
+
+	.phone-btn:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 8px 25px rgba(37, 154, 140, 0.3);
+	}
+
+	.instagram-btn {
+		background: linear-gradient(135deg, #e1306c, #fd1d1d);
+		color: white;
+		width: 100%;
+		justify-content: center;
+	}
+
+	.instagram-btn:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 8px 25px rgba(225, 48, 108, 0.3);
+	}
+
+	/* Contact Information Grid */
+	.contact-info-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+		gap: 2rem;
+	}
+
+	.info-card {
+		background: white;
+		border-radius: 16px;
+		padding: 2rem;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+		border: 1px solid #e5e7eb;
+		transition: all 0.3s ease;
+	}
+
+	.info-card:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+	}
+
+	.info-icon {
+		width: 60px;
+		height: 60px;
+		border-radius: 12px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 1.5rem;
+		font-size: 1.5rem;
+	}
+
+	.location-card .info-icon {
+		background: linear-gradient(135deg, #ef4444, #dc2626);
+		color: white;
+	}
+
+	.schedule-card .info-icon {
+		background: linear-gradient(135deg, #3b82f6, #2563eb);
+		color: white;
+	}
+
+	.services-card .info-icon {
+		background: linear-gradient(135deg, #259a8c, #1d7a6f);
+		color: white;
+	}
+
+	.info-content h4 {
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: #1f2937;
+		margin-bottom: 1rem;
+	}
+
+	.info-content p {
+		color: #6b7280;
+		line-height: 1.6;
+		margin-bottom: 1rem;
+	}
+
+	.info-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: #259a8c;
+		text-decoration: none;
+		font-weight: 600;
+		transition: color 0.3s ease;
+	}
+
+	.info-link:hover {
+		color: #1d7a6f;
+	}
+
+	.schedule-list {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.schedule-item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0.75rem;
+		background: #f8fafc;
+		border-radius: 8px;
+		border-left: 4px solid #259a8c;
+	}
+
+	.schedule-item.closed {
+		border-left-color: #ef4444;
+		background: #fef2f2;
+	}
+
+	.schedule-item .day {
+		font-weight: 600;
+		color: #1f2937;
+	}
+
+	.schedule-item .time {
+		color: #6b7280;
+		font-weight: 500;
+	}
+
+	.schedule-item.closed .time {
+		color: #ef4444;
+	}
+
+	.services-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.services-list li {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		padding: 0.5rem 0;
+		color: #6b7280;
+	}
+
+	.services-list i {
+		color: #259a8c;
+		font-size: 0.875rem;
+	}
+
+	/* Responsive Design */
+	@media (max-width: 768px) {
+		.contact {
+			padding: 4rem 0;
+		}
+
+		.quick-actions {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+			margin-bottom: 3rem;
+		}
+
+		.contact-info-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+
+		.quick-action-card,
+		.info-card {
+			padding: 1.5rem;
+		}
+
+		.phone-buttons {
+			flex-direction: column;
+		}
+
+		.contact .section-header {
+			margin-bottom: 3rem;
+		}
+	}
+</style>

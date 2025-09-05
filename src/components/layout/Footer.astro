@@ -1,0 +1,243 @@
+---
+
+---
+
+<footer class="footer">
+	<div class="container">
+		<div class="footer__content">
+			<div class="footer__brand">
+				<div class="footer__logo">
+					<img src="/logo-guppy.png" alt="Guppy Pet Logo" class="footer__logo-img">
+					<span class="footer__logo-text">Guppy Pet</span>
+				</div>
+				<p class="footer__description">
+					Cuidando a tus mascotas con amor, profesionalismo y la mejor atención veterinaria.
+				</p>
+				<div class="footer__social">
+					<a href="https://instagram.com/guppyvet" class="social-link" target="_blank">
+						<i class="fab fa-instagram"></i>
+					</a>
+					<a href="https://wa.me/56992434668" class="social-link" target="_blank">
+						<i class="fab fa-whatsapp"></i>
+					</a>
+					<a href="tel:+56223434208" class="social-link" target="_blank">
+						<i class="fas fa-phone"></i>
+					</a>
+				</div>
+			</div>
+			
+			<div class="footer__links">
+				<div class="footer__column">
+					<h4 class="footer__title">Servicios</h4>
+					<ul class="footer__list">
+						<li><a href="#servicios" class="footer__link">Consultas Veterinarias</a></li>
+						<li><a href="#servicios" class="footer__link">Consultas a Domicilio</a></li>
+						<li><a href="#servicios" class="footer__link">Vacunación</a></li>
+						<li><a href="#servicios" class="footer__link">Desparasitación</a></li>
+						<li><a href="#servicios" class="footer__link">Microchip</a></li>
+						<li><a href="#servicios" class="footer__link">Corte de Uñas</a></li>
+					</ul>
+				</div>
+				
+				<div class="footer__column">
+					<h4 class="footer__title">Información</h4>
+					<ul class="footer__list">
+						<li><a href="#sobre-nosotros" class="footer__link">Sobre Nosotros</a></li>
+						<li><a href="#" class="footer__link">Nuestro Equipo</a></li>
+						<li><a href="#" class="footer__link">Instalaciones</a></li>
+						<li><a href="#" class="footer__link">Blog</a></li>
+					</ul>
+				</div>
+				
+				<div class="footer__column">
+					<h4 class="footer__title">Contacto</h4>
+					<ul class="footer__list">
+						<li class="footer__contact">
+							<i class="fas fa-map-marker-alt"></i>
+							Av. Macul 6035, Local 7, Macul
+						</li>
+						<li class="footer__contact">
+							<i class="fas fa-phone"></i>
+							+56 2 2343 4208
+						</li>
+						<li class="footer__contact">
+							<i class="fas fa-mobile-alt"></i>
+							+56 9 9243 4668
+						</li>
+						<li class="footer__contact">
+							<i class="fab fa-instagram"></i>
+							@guppyvet
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer__bottom">
+			<p class="footer__copyright">
+				&copy; 2025 Guppy Pet Veterinaria. Todos los derechos reservados.
+			</p>
+			<div class="footer__legal">
+				<a href="#" class="footer__legal-link">Política de Privacidad</a>
+				<a href="#" class="footer__legal-link">Términos de Servicio</a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<style>
+	/* Footer */
+	.footer {
+		background: var(--text-dark);
+		color: #cbd5e0;
+		padding: 4rem 0 2rem;
+	}
+
+	.footer__content {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: 4rem;
+		margin-bottom: 3rem;
+	}
+
+	.footer__logo {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		margin-bottom: 1rem;
+	}
+
+	.footer__logo-img {
+		width: 40px;
+		height: 40px;
+	}
+
+	.footer__logo-text {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: var(--primary-color);
+	}
+
+	.footer__description {
+		color: #a0aec0;
+		line-height: 1.6;
+		margin-bottom: 2rem;
+		max-width: 300px;
+	}
+
+	.footer__social {
+		display: flex;
+		gap: 1rem;
+	}
+
+	.social-link {
+		width: 40px;
+		height: 40px;
+		background: var(--primary-color);
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		text-decoration: none;
+		transition: all 0.3s ease;
+	}
+
+	.social-link:hover {
+		background: var(--accent-color);
+		transform: translateY(-2px);
+	}
+
+	.footer__links {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+	}
+
+	.footer__title {
+		color: white;
+		font-size: 1.125rem;
+		font-weight: 600;
+		margin-bottom: 1rem;
+	}
+
+	.footer__list {
+		list-style: none;
+		padding: 0;
+	}
+
+	.footer__list li {
+		margin-bottom: 0.75rem;
+	}
+
+	.footer__link {
+		color: #a0aec0;
+		text-decoration: none;
+		transition: color 0.3s ease;
+	}
+
+	.footer__link:hover {
+		color: var(--primary-color);
+	}
+
+	.footer__contact {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: #a0aec0;
+		font-size: 0.875rem;
+	}
+
+	.footer__contact i {
+		color: var(--primary-color);
+		width: 16px;
+	}
+
+	.footer__bottom {
+		border-top: 1px solid #4a5568;
+		padding-top: 2rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+
+	.footer__copyright {
+		color: #a0aec0;
+		font-size: 0.875rem;
+	}
+
+	.footer__legal {
+		display: flex;
+		gap: 2rem;
+	}
+
+	.footer__legal-link {
+		color: #a0aec0;
+		text-decoration: none;
+		font-size: 0.875rem;
+		transition: color 0.3s ease;
+	}
+
+	.footer__legal-link:hover {
+		color: var(--primary-color);
+	}
+
+	@media (max-width: 768px) {
+		.footer__content {
+			grid-template-columns: 1fr;
+			text-align: center;
+		}
+
+		.footer__links {
+			grid-template-columns: 1fr;
+			text-align: left;
+		}
+
+		.footer__bottom {
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+</style>

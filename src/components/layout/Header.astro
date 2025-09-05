@@ -1,0 +1,109 @@
+---
+
+---
+
+<header class="header">
+	<nav class="nav container">
+		<div class="nav__logo">
+			<img src="/logo-guppy.png" alt="Guppy Pet Logo" class="nav__logo-img">
+			<span class="nav__logo-text">Guppy Pet</span>
+		</div>
+		
+		<ul class="nav__menu">
+			<li class="nav__item">
+				<a href="#inicio" class="nav__link">Inicio</a>
+			</li>
+			<li class="nav__item">
+				<a href="#servicios" class="nav__link">Servicios</a>
+			</li>
+			<li class="nav__item">
+				<a href="#sobre-nosotros" class="nav__link">Nosotros</a>
+			</li>
+			<li class="nav__item">
+				<a href="#contacto" class="nav__link">Contacto</a>
+			</li>
+		</ul>
+		
+		<div class="nav__cta">
+			<a href="tel:+56992434668" class="btn btn--primary">
+				<i class="fas fa-phone"></i>
+				Llamar
+			</a>
+		</div>
+		
+		<div class="nav__toggle">
+			<i class="fas fa-bars"></i>
+		</div>
+	</nav>
+</header>
+
+<style>
+	/* Header */
+	.header {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		background: rgba(255, 255, 255, 0.95);
+		backdrop-filter: blur(10px);
+		z-index: 1000;
+		box-shadow: var(--shadow-light);
+	}
+
+	.nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: var(--header-height);
+	}
+
+	.nav__logo {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+	}
+
+	.nav__logo-img {
+		width: 40px;
+		height: 40px;
+	}
+
+	.nav__logo-text {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: var(--primary-color);
+	}
+
+	.nav__menu {
+		display: flex;
+		list-style: none;
+		gap: 2rem;
+	}
+
+	.nav__link {
+		text-decoration: none;
+		color: var(--text-dark);
+		font-weight: 500;
+		transition: color 0.3s ease;
+	}
+
+	.nav__link:hover {
+		color: var(--primary-color);
+	}
+
+	.nav__toggle {
+		display: none;
+		font-size: 1.5rem;
+		cursor: pointer;
+		color: var(--primary-color);
+	}
+
+	@media (max-width: 768px) {
+		.nav__menu {
+			display: none;
+		}
+
+		.nav__toggle {
+			display: block;
+		}
+	}
+</style>
