@@ -2,9 +2,18 @@
 export interface Props {
 	title: string;
 	description?: string;
+	keywords?: string;
+	image?: string;
+	url?: string;
 }
 
-const { title, description = "Guppy Pet - Veterinaria especializada en el cuidado integral de tus mascotas. Servicios veterinarios de calidad con amor y profesionalismo." } = Astro.props;
+const { 
+	title, 
+	description = "Guppy Vet - Veterinaria especializada en el cuidado integral de tus mascotas. Servicios veterinarios de calidad con amor y profesionalismo.",
+	keywords = "veterinaria, mascotas, perros, gatos, cuidado animal, consultas veterinarias, vacunas, cirugía veterinaria, emergencias veterinarias, salud animal, clínica veterinaria",
+	image = "/images/guppy-vet-og.jpg",
+	url = Astro.url.href
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -14,8 +23,74 @@ const { title, description = "Guppy Pet - Veterinaria especializada en el cuidad
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content={description} />
+		
+		<!-- Primary Meta Tags -->
 		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta name="author" content="Guppy Vet" />
+		<meta name="robots" content="index, follow" />
+		<meta name="theme-color" content="#10b981" />
+		
+		<!-- Canonical URL -->
+		<link rel="canonical" href={url} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(image, Astro.url)} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:locale" content="es_ES" />
+		<meta property="og:site_name" content="Guppy Vet" />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={new URL(image, Astro.url)} />
+		
+		<!-- Additional SEO Meta Tags -->
+		<meta name="geo.region" content="ES" />
+		<meta name="geo.placename" content="España" />
+		<meta name="language" content="Spanish" />
+		<meta name="distribution" content="global" />
+		<meta name="rating" content="general" />
+		
+		<!-- Performance and Security -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="format-detection" content="telephone=no" />
+		<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+		<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+		<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+		
+		<!-- Structured Data -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "VeterinaryCare",
+			"name": "Guppy Vet",
+			"description": "Veterinaria especializada en el cuidado integral de mascotas",
+			"url": "https://guppyvet.com",
+			"logo": "https://guppyvet.com/logo.png",
+			"address": {
+				"@type": "PostalAddress",
+				"addressCountry": "ES"
+			},
+			"contactPoint": {
+				"@type": "ContactPoint",
+				"contactType": "customer service",
+				"availableLanguage": "Spanish"
+			},
+			"sameAs": [
+				"https://facebook.com/guppyvet",
+				"https://instagram.com/guppyvet"
+			]
+		}
+		</script>
 		
 		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
