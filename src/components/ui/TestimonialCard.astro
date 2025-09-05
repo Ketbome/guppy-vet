@@ -1,0 +1,139 @@
+---
+interface Props {
+	name: string;
+	role: string;
+	avatar: string;
+	stars: number;
+	text: string;
+	isGoogleReview?: boolean;
+}
+
+const { name, role, avatar, stars, text, isGoogleReview = true } = Astro.props;
+---
+
+<div class="testimonial-card" class:list={[{ 'google-review': isGoogleReview }]}>
+	<div class="review-header">
+		<div class="testimonial-card__stars">
+			{Array.from({length: stars}, (_, i) => (
+				<i class="fas fa-star"></i>
+			))}
+		</div>
+		{isGoogleReview && (
+			<div class="google-logo">
+				<i class="fab fa-google"></i>
+				<span>Google</span>
+			</div>
+		)}
+	</div>
+	<p class="testimonial-card__text">
+		"{text}"
+	</p>
+	<div class="testimonial-card__author">
+		<img src={avatar} alt={name} class="testimonial-card__avatar">
+		<div class="testimonial-card__info">
+			<h4 class="testimonial-card__name">{name}</h4>
+			<span class="testimonial-card__role">{role}</span>
+		</div>
+	</div>
+</div>
+
+<style>
+	.testimonial-card {
+		background: white;
+		padding: 2rem;
+		border-radius: 16px;
+		box-shadow: var(--shadow-light);
+		border: 1px solid var(--border-color);
+		transition: all 0.3s ease;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.testimonial-card:hover {
+		transform: translateY(-4px);
+		box-shadow: var(--shadow-medium);
+	}
+
+	.google-review {
+		border: 1px solid #e8f5e8;
+		background: linear-gradient(135deg, #ffffff 0%, #f8fff8 100%);
+	}
+
+	.review-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 1rem;
+	}
+
+	.testimonial-card__stars {
+		display: flex;
+		gap: 0.25rem;
+	}
+
+	.testimonial-card__stars i {
+		color: #fbbf24;
+		font-size: 1rem;
+	}
+
+	.google-logo {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: #4285f4;
+		font-weight: 600;
+		font-size: 0.875rem;
+	}
+
+	.google-logo i {
+		font-size: 1rem;
+	}
+
+	.testimonial-card__text {
+		color: var(--text-dark);
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+		font-style: italic;
+		flex-grow: 1;
+	}
+
+	.testimonial-card__author {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.testimonial-card__info {
+		flex: 1;
+		min-width: 0;
+	}
+
+	.testimonial-card__avatar {
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		object-fit: cover;
+		object-position: center;
+		border: 2px solid #e5e7eb;
+		background: #f9fafb;
+		flex-shrink: 0;
+		transition: all 0.3s ease;
+	}
+
+	.testimonial-card:hover .testimonial-card__avatar {
+		border-color: var(--primary-color);
+		transform: scale(1.05);
+	}
+
+	.testimonial-card__name {
+		color: var(--text-dark);
+		font-weight: 600;
+		margin-bottom: 0.25rem;
+	}
+
+	.testimonial-card__role {
+		color: var(--text-light);
+		font-size: 0.875rem;
+	}
+</style>
