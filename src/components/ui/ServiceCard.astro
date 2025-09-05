@@ -1,0 +1,120 @@
+---
+export interface Props {
+	icon: string;
+	title: string;
+	description: string;
+	features: string[];
+	isFeatured?: boolean;
+	badge?: string;
+}
+
+const { 
+	icon, 
+	title, 
+	description, 
+	features, 
+	isFeatured = false, 
+	badge = "Más Popular" 
+} = Astro.props;
+---
+
+<div class={`service-card ${isFeatured ? 'service-card--featured' : ''}`}>
+	{isFeatured && (
+		<div class="service-card__badge">{badge}</div>
+	)}
+	<div class="service-card__icon">
+		<i class={`fas ${icon}`}></i>
+	</div>
+	<h3 class="service-card__title">{title}</h3>
+	<p class="service-card__description">{description}</p>
+	<ul class="service-card__features">
+		{features.map(feature => (
+			<li>
+				<i class="fas fa-check"></i> 
+				{feature}
+			</li>
+		))}
+	</ul>
+</div>
+
+<style>
+	.service-card {
+		background: white;
+		padding: 2.5rem 2rem;
+		border-radius: 16px;
+		box-shadow: var(--shadow-light);
+		border: 1px solid var(--border-color);
+		transition: all 0.3s ease;
+		position: relative;
+	}
+
+	.service-card:hover {
+		transform: translateY(-8px);
+		box-shadow: var(--shadow-large);
+	}
+
+	.service-card--featured {
+		border: 2px solid var(--primary-color);
+		background: linear-gradient(135deg, #f8fffe 0%, #ffffff 100%);
+	}
+
+	.service-card__badge {
+		position: absolute;
+		top: -12px;
+		left: 50%;
+		transform: translateX(-50%);
+		background: var(--primary-color);
+		color: white;
+		padding: 0.5rem 1rem;
+		border-radius: 20px;
+		font-size: 0.75rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.service-card__icon {
+		width: 80px;
+		height: 80px;
+		background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+		border-radius: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 1.5rem;
+		color: white;
+		font-size: 2rem;
+	}
+
+	.service-card__title {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: var(--text-dark);
+		margin-bottom: 1rem;
+	}
+
+	.service-card__description {
+		color: var(--text-light);
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+	}
+
+	.service-card__features {
+		list-style: none;
+		padding: 0;
+	}
+
+	.service-card__features li {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		margin-bottom: 0.75rem;
+		color: var(--text-dark);
+		font-weight: 500;
+	}
+
+	.service-card__features i {
+		color: var(--primary-color);
+		font-size: 0.875rem;
+	}
+</style>

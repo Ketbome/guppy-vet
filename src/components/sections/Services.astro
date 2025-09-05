@@ -1,5 +1,75 @@
 ---
+import ServiceCard from '../ui/ServiceCard.astro';
 
+const services = [
+	{
+		icon: 'fa-stethoscope',
+		title: 'Consultas Veterinarias',
+		description: 'Atención médica completa en clínica y a domicilio para el bienestar de tu mascota',
+		features: [
+			'Consultas en clínica',
+			'Consultas a domicilio',
+			'Examen físico completo',
+			'Diagnóstico profesional'
+		]
+	},
+	{
+		icon: 'fa-syringe',
+		title: 'Vacunación y Prevención',
+		description: 'Protección completa con vacunas, desparasitación y microchip para tu mascota',
+		features: [
+			'Vacunas esenciales',
+			'Desparasitación interna y externa',
+			'Implantación de microchip',
+			'Calendario personalizado'
+		],
+		isFeatured: true
+	},
+	{
+		icon: 'fa-microscope',
+		title: 'Diagnóstico Avanzado',
+		description: 'Exámenes especializados para diagnósticos precisos y tratamientos efectivos',
+		features: [
+			'Exámenes de laboratorio',
+			'Ecografías',
+			'Análisis clínicos',
+			'Diagnóstico por imagen'
+		]
+	},
+	{
+		icon: 'fa-scissors',
+		title: 'Cirugías',
+		description: 'Procedimientos quirúrgicos seguros con tecnología moderna y cuidado especializado',
+		features: [
+			'Cirugías de rutina',
+			'Procedimientos especializados',
+			'Anestesia segura',
+			'Cuidado post-operatorio'
+		]
+	},
+	{
+		icon: 'fa-cut',
+		title: 'Cuidado y Estética',
+		description: 'Servicios de cuidado personal profesional para mantener a tu mascota saludable',
+		features: [
+			'Corte de uñas profesional',
+			'Limpieza de oídos',
+			'Cuidado de pelaje',
+			'Revisión de patas'
+		]
+	},
+	{
+		icon: 'fa-plus',
+		title: 'Farmacia y Accesorios',
+		description: 'Venta de medicamentos veterinarios y accesorios para el cuidado de tu mascota',
+		features: [
+			'Medicamentos veterinarios',
+			'Accesorios para mascotas',
+			'Suplementos nutricionales',
+			'Productos de cuidado'
+		]
+	}
+];
 ---
 
 <section id="servicios" class="services">
@@ -13,102 +83,15 @@
 		</div>
 		
 		<div class="services__grid">
-			<div class="service-card">
-				<div class="service-card__icon">
-					<i class="fas fa-stethoscope"></i>
-				</div>
-				<h3 class="service-card__title">Consultas Veterinarias</h3>
-				<p class="service-card__description">
-					Atención médica completa en clínica y a domicilio para el bienestar de tu mascota
-				</p>
-				<ul class="service-card__features">
-					<li><i class="fas fa-check"></i> Consultas en clínica</li>
-					<li><i class="fas fa-check"></i> Consultas a domicilio</li>
-					<li><i class="fas fa-check"></i> Examen físico completo</li>
-					<li><i class="fas fa-check"></i> Diagnóstico profesional</li>
-				</ul>
-			</div>
-			
-			<div class="service-card service-card--featured">
-				<div class="service-card__badge">Más Popular</div>
-				<div class="service-card__icon">
-					<i class="fas fa-syringe"></i>
-				</div>
-				<h3 class="service-card__title">Vacunación y Prevención</h3>
-				<p class="service-card__description">
-					Protección completa con vacunas, desparasitación y microchip para tu mascota
-				</p>
-				<ul class="service-card__features">
-					<li><i class="fas fa-check"></i> Vacunas esenciales</li>
-					<li><i class="fas fa-check"></i> Desparasitación interna y externa</li>
-					<li><i class="fas fa-check"></i> Implantación de microchip</li>
-					<li><i class="fas fa-check"></i> Calendario personalizado</li>
-				</ul>
-			</div>
-			
-			<div class="service-card">
-				<div class="service-card__icon">
-					<i class="fas fa-microscope"></i>
-				</div>
-				<h3 class="service-card__title">Diagnóstico Avanzado</h3>
-				<p class="service-card__description">
-					Exámenes especializados para diagnósticos precisos y tratamientos efectivos
-				</p>
-				<ul class="service-card__features">
-					<li><i class="fas fa-check"></i> Exámenes de laboratorio</li>
-					<li><i class="fas fa-check"></i> Ecografías</li>
-					<li><i class="fas fa-check"></i> Análisis clínicos</li>
-					<li><i class="fas fa-check"></i> Diagnóstico por imagen</li>
-				</ul>
-			</div>
-			
-			<div class="service-card">
-				<div class="service-card__icon">
-					<i class="fas fa-scissors"></i>
-				</div>
-				<h3 class="service-card__title">Cirugías</h3>
-				<p class="service-card__description">
-					Procedimientos quirúrgicos seguros con tecnología moderna y cuidado especializado
-				</p>
-				<ul class="service-card__features">
-					<li><i class="fas fa-check"></i> Cirugías de rutina</li>
-					<li><i class="fas fa-check"></i> Procedimientos especializados</li>
-					<li><i class="fas fa-check"></i> Anestesia segura</li>
-					<li><i class="fas fa-check"></i> Cuidado post-operatorio</li>
-				</ul>
-			</div>
-			
-			<div class="service-card">
-				<div class="service-card__icon">
-					<i class="fas fa-cut"></i>
-				</div>
-				<h3 class="service-card__title">Cuidado y Estética</h3>
-				<p class="service-card__description">
-					Servicios de cuidado personal profesional para mantener a tu mascota saludable
-				</p>
-				<ul class="service-card__features">
-					<li><i class="fas fa-check"></i> Corte de uñas profesional</li>
-					<li><i class="fas fa-check"></i> Limpieza de oídos</li>
-					<li><i class="fas fa-check"></i> Cuidado de pelaje</li>
-					<li><i class="fas fa-check"></i> Revisión de patas</li>
-				</ul>
-			</div>
-			
-			<div class="service-card">
-				<div class="service-card__icon">
-					<i class="fas fa-plus"></i>
-				</div>
-				<h3 class="service-card__title">Farmacia y Accesorios</h3>
-				<p class="service-card__description">
-					Venta de medicamentos veterinarios y accesorios para el cuidado de tu mascota
-				</p>
-				<ul class="service-card__features">
-					<li><i class="fas fa-check"></i> Medicamentos veterinarios</li>
-					<li><i class="fas fa-check"></i> Accesorios para mascotas</li>
-					<li><i class="fas fa-check"></i> Suplementos nutricionales</li>
-					<li><i class="fas fa-check"></i> Productos de cuidado</li>
-				</ul>
-			</div>
+			{services.map(service => (
+				<ServiceCard
+					icon={service.icon}
+					title={service.title}
+					description={service.description}
+					features={service.features}
+					isFeatured={service.isFeatured || false}
+				/>
+			))}
 		</div>
 	</div>
 </section>
@@ -124,86 +107,6 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 		gap: 2rem;
-	}
-
-	.service-card {
-		background: white;
-		padding: 2.5rem 2rem;
-		border-radius: 16px;
-		box-shadow: var(--shadow-light);
-		border: 1px solid var(--border-color);
-		transition: all 0.3s ease;
-		position: relative;
-	}
-
-	.service-card:hover {
-		transform: translateY(-8px);
-		box-shadow: var(--shadow-large);
-	}
-
-	.service-card--featured {
-		border: 2px solid var(--primary-color);
-		background: linear-gradient(135deg, #f8fffe 0%, #ffffff 100%);
-	}
-
-	.service-card__badge {
-		position: absolute;
-		top: -12px;
-		left: 50%;
-		transform: translateX(-50%);
-		background: var(--primary-color);
-		color: white;
-		padding: 0.5rem 1rem;
-		border-radius: 20px;
-		font-size: 0.75rem;
-		font-weight: 600;
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-	}
-
-	.service-card__icon {
-		width: 80px;
-		height: 80px;
-		background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-		border-radius: 20px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		margin-bottom: 1.5rem;
-		color: white;
-		font-size: 2rem;
-	}
-
-	.service-card__title {
-		font-size: 1.5rem;
-		font-weight: 700;
-		color: var(--text-dark);
-		margin-bottom: 1rem;
-	}
-
-	.service-card__description {
-		color: var(--text-light);
-		line-height: 1.6;
-		margin-bottom: 1.5rem;
-	}
-
-	.service-card__features {
-		list-style: none;
-		padding: 0;
-	}
-
-	.service-card__features li {
-		display: flex;
-		align-items: center;
-		gap: 0.75rem;
-		margin-bottom: 0.75rem;
-		color: var(--text-dark);
-		font-weight: 500;
-	}
-
-	.service-card__features i {
-		color: var(--primary-color);
-		font-size: 0.875rem;
 	}
 
 	@media (max-width: 768px) {
